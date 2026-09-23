@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7f1d1d">
+  <meta name="description" content="Circus Vargas Goes to Japan — family trip companion Oct 9–18, 2026.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Circus Vargas Goes to Japan</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AA%3C/text%3E%3C/svg%3E">
+  <style>
+:root {
+  --red: #b91c1c;
+  --red-deep: #7f1d1d;
+  --gold: #d4a017;
+  --gold-soft: #f0d78c;
+  --cream: #faf6ef;
+  --ink: #1c1410;
+  --ink-soft: #4a3f36;
+  --card: #fffdf8;
+  --border: #e8d9c0;
+  --ok: #166534;
+  --warn-bg: #fff7ed;
+  --warn-border: #fdba74;
+  --banner: #1e3a5f;
+  --shadow: 0 2px 12px rgba(28, 20, 16, 0.08);
+  --radius: 14px;
+  --tap: 44px;
+  --font: "Segoe UI", system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.45;
+  min-height: 100dvh;
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+a { color: var(--red-deep); }
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(135deg, var(--red-deep), var(--red) 55%, #c2410c);
+  color: #fff;
+  padding: 12px 16px 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+.app-header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  opacity: 0.92;
+}
+.header-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: var(--tap);
+  padding: 0 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  background: var(--gold-soft);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.btn-ghost {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.btn-ghost:hover, .btn-ghost:focus-visible {
+  background: rgba(255,255,255,.28);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.btn-sm {
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 0.8rem;
+}
+.btn-icon {
+  min-width: var(--tap);
+  min-height: var(--tap);
+  padding: 0;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.btn-icon[aria-pressed="true"] {
+  background: #fef3c7;
+  border-color: var(--gold);
+}
+
+.banner {
+  background: var(--banner);
+  color: #e8eef6;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  text-align: center;
+}
+.banner strong { color: #fff; }
+
+.nav-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.nav-tabs button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  min-height: 52px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.nav-tabs button .ico { font-size: 1.15rem; line-height: 1; }
+.nav-tabs button[aria-selected="true"] {
+  color: var(--red);
+  background: #fef2f2;
+}
+.nav-tabs button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 1px;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 14px 14px 24px;
+}
+.panel { display: none; }
+.panel.active { display: block; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.card h2, .card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.pill-booked { background: #dcfce7; color: var(--ok); }
+.pill-planned { background: #fef3c7; color: #92400e; }
+.pill-plan { background: #e0e7ff; color: #3730a3; }
+
+.callout {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-size: 0.88rem;
+}
+.callout a { word-break: break-all; }
+
+.countdown {
+  text-align: center;
+  padding: 20px 12px;
+}
+.countdown .big {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1.1;
+}
+.day-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.day-title-row h2 { margin: 0; flex: 1; }
+
+.item {
+  border-top: 1px solid var(--border);
+  padding: 12px 0 10px;
+}
+.item:first-of-type { border-top: none; padding-top: 4px; }
+.item.done .item-title { text-decoration: line-through; opacity: 0.65; }
+.item-top {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.item-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.item-body { flex: 1; min-width: 0; }
+.item-title { font-weight: 700; font-size: 0.98rem; }
+.item-detail { font-size: 0.86rem; color: var(--ink-soft); margin-top: 2px; }
+.item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.item-note {
+  width: 100%;
+  margin-top: 8px;
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  resize: vertical;
+}
+.chk {
+  width: 28px;
+  height: 28px;
+  accent-color: var(--red);
+  cursor: pointer;
+}
+
+.day-picker {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.day-chip {
+  flex: 0 0 auto;
+  min-width: 64px;
+  min-height: var(--tap);
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.day-chip .d { display: block; font-size: 1rem; font-weight: 800; color: var(--red); }
+.day-chip[aria-selected="true"] {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red-deep);
+}
+.day-chip[aria-selected="true"] .d { color: var(--gold-soft); }
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.search-row input {
+  flex: 1;
+  min-height: var(--tap);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  background: #fff;
+}
+.cat-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+.cat-chip {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.cat-chip[aria-selected="true"] {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+}
+
+.phrase-grid {
+  display: grid;
+  gap: 10px;
+}
+.phrase-card {
+  perspective: 800px;
+  min-height: 120px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+}
+.phrase-inner {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  transition: transform 0.45s;
+  transform-style: preserve-3d;
+}
+.phrase-card.flipped .phrase-inner { transform: rotateY(180deg); }
+.phrase-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.phrase-face.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #fff7ed, #fff);
+}
+.phrase-ja {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.phrase-romaji {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.phrase-en {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--red-deep);
+}
+.phrase-hint {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+.phrase-tools {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.stay-card h3 { margin-bottom: 4px; }
+.kv { font-size: 0.88rem; margin: 4px 0; }
+.kv span { color: var(--ink-soft); }
+
+.app-footer {
+  max-width: 640px;
+  margin: 8px auto 0;
+  padding: 8px 16px 20px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@media (min-width: 640px) {
+  .app-header h1 { font-size: 1.35rem; }
+  .phrase-grid { grid-template-columns: 1fr 1fr; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <h1>Circus Vargas Goes to Japan</h1>
+    <p class="tagline">Oct 9–18, 2026 · family trip companion</p>
+    <div class="header-actions">
+      <a id="doc-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Edit shared itinerary</a>
+    </div>
+  </header>
+
+  <div class="banner" role="status">
+    <strong>Note:</strong> <span id="banner-text">Shared edits happen in the Google Doc; checkmarks on this phone only.</span>
+  </div>
+
+  <main>
+    <section id="panel-today" class="panel active" aria-label="Today"></section>
+    <section id="panel-itinerary" class="panel" aria-label="Itinerary"></section>
+    <section id="panel-phrases" class="panel" aria-label="Phrases"></section>
+    <section id="panel-stays" class="panel" aria-label="Stays and trains"></section>
+    <section id="panel-party" class="panel" aria-label="Party notes"></section>
+  </main>
+
+  <footer class="app-footer">
+    Last synced: <span id="last-synced">—</span>
+    · Public companion · no secrets stored here
+  </footer>
+
+  <nav class="nav-tabs" aria-label="Primary">
+    <button type="button" data-panel="today" aria-selected="true"><span class="ico" aria-hidden="true">📅</span>Today</button>
+    <button type="button" data-panel="itinerary" aria-selected="false"><span class="ico" aria-hidden="true">🗺️</span>Itinerary</button>
+    <button type="button" data-panel="phrases" aria-selected="false"><span class="ico" aria-hidden="true">💬</span>Phrases</button>
+    <button type="button" data-panel="stays" aria-selected="false"><span class="ico" aria-hidden="true">🏨</span>Stays</button>
+    <button type="button" data-panel="party" aria-selected="false"><span class="ico" aria-hidden="true">🎪</span>Party</button>
+  </nav>
+
+  <script>
+/* Auto-generated by scripts/sync-data.js — do not edit by hand; edit data/*.json */
+window.TRIP_DATA = {
+  "meta": {
+    "title": "Circus Vargas Goes to Japan",
+    "docUrl": "https://docs.google.com/document/d/1t0yKSCdpAXDrOtdceFMqJ7ZXoe6zh-OmAR-z8jigMEA/edit",
+    "lastSynced": "2026-09-23 11:47 PT",
+    "partySize": "6 adults, one 10-year-old, one toddler (~23 months) = 8 people",
+    "timezone": "Asia/Tokyo",
+    "tripStart": "2026-10-09",
+    "tripEnd": "2026-10-18",
+    "banner": "Shared edits happen in the Google Doc; checkmarks & stars on this phone only."
+  },
+  "days": [
+    {
+      "id": "day-2026-10-09",
+      "date": "2026-10-09",
+      "weekday": "Friday",
+      "title": "Arrive Tokyo — Haneda",
+      "city": "Tokyo (Haneda)",
+      "summary": "Overnight flight lands Haneda ~9pm. Check in Villa Fontaine Premier Terminal 3.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d9-flight",
+          "type": "flight",
+          "title": "Land Haneda ~9pm",
+          "detail": "Outbound overnight flight (LAX → HND). Doc lists Oct 8 as LAX departure — arrival is Oct 9.",
+          "status": "Booked",
+          "mapsQuery": "Haneda Airport Terminal 3",
+          "mapsUrl": null
+        },
+        {
+          "id": "d9-hotel",
+          "type": "stay",
+          "title": "Villa Fontaine Premier Terminal 3",
+          "detail": "Night of Oct 9 at Haneda. Booked.",
+          "status": "Booked",
+          "mapsQuery": "Villa Fontaine Premier Haneda Airport Terminal 3",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-10",
+      "date": "2026-10-10",
+      "weekday": "Saturday",
+      "title": "Haneda → Kyoto · City walk",
+      "city": "Kyoto",
+      "summary": "Jumbo van to Shinagawa, Nozomi 27 to Kyoto, check in Hotel Kyoto Shijo Kawaramachi, then Nishiki → Gion → Higashiyama walk.",
+      "callouts": [
+        "Doc still says Forza / 2pm Shinkansen — confirm with Alyssa. Showing booked Nozomi 27 + Hotel Kyoto Shijo Kawaramachi.",
+        "Kansai Wide Area Pass recommended — watch: https://www.youtube.com/watch?v=Axqxa-FB73s"
+      ],
+      "items": [
+        {
+          "id": "d10-breakfast",
+          "type": "food",
+          "title": "Breakfast TBD",
+          "detail": "Before departure from Haneda area.",
+          "status": null,
+          "mapsQuery": null,
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-van",
+          "type": "transit",
+          "title": "Jumbo van Haneda → Shinagawa",
+          "detail": "Prefer van with 8 + bags (not Keikyu).",
+          "status": "Plan",
+          "mapsQuery": "Shinagawa Station Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-shinkansen",
+          "type": "train",
+          "title": "Nozomi 27 — Green Car",
+          "detail": "Tokyo 11:12 / Shinagawa 11:19 → Kyoto 13:23. Planned / not ticketed yet (SmartEX).",
+          "status": "Planned / not ticketed yet",
+          "mapsQuery": "Kyoto Station",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-hotel",
+          "type": "stay",
+          "title": "Hotel Kyoto Shijo Kawaramachi",
+          "detail": "Check-in 2pm. Booked — NOT Forza.",
+          "status": "Booked",
+          "mapsQuery": "Hotel Kyoto Shijo Kawaramachi",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-nishiki",
+          "type": "place",
+          "title": "Nishiki Market",
+          "detail": "City walk from hotel area.",
+          "status": null,
+          "mapsQuery": "Nishiki Market Kyoto",
+          "mapsUrl": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9"
+        },
+        {
+          "id": "d10-daishodo",
+          "type": "place",
+          "title": "Daishodo Woodblock Print Shop",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Daishodo Woodblock Print Shop Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-yamatake",
+          "type": "place",
+          "title": "Yamatake Senpo fan shop",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Yamatake Senpo Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-pontocho",
+          "type": "place",
+          "title": "Pontocho Alley / Geisha area",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Pontocho Alley Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-gion",
+          "type": "place",
+          "title": "Shijo-kobashi → Gion",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Gion Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-maruyama",
+          "type": "place",
+          "title": "Maruyama Park / Chion-in / Yasaka / Kodai-ji",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Maruyama Park Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-hokanji",
+          "type": "place",
+          "title": "Hokanji (Yasaka Pagoda)",
+          "detail": "A&P must see.",
+          "status": null,
+          "mapsQuery": "Yasaka Pagoda Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-hatsune",
+          "type": "place",
+          "title": "Hatsune Antiques",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Hatsune Antiques Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-kiyomizu",
+          "type": "place",
+          "title": "Higashiyama / Kiyomizu-dera",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kiyomizu-dera Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-yogenin",
+          "type": "place",
+          "title": "Yogen-in Temple (blood ceilings)",
+          "detail": "A&P must see.",
+          "status": null,
+          "mapsQuery": "Yogen-in Temple Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d10-kamo",
+          "type": "place",
+          "title": "Back via Kamo River / Takase Canal",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kamo River Kyoto",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-11",
+      "date": "2026-10-11",
+      "weekday": "Sunday",
+      "title": "Flexible Kyoto day",
+      "city": "Kyoto",
+      "summary": "Open / TBD in the Google Doc — fill in as the party decides.",
+      "callouts": [
+        "Flexible day — add plans in the shared Google Doc."
+      ],
+      "items": [
+        {
+          "id": "d11-tbd",
+          "type": "note",
+          "title": "Kyoto — open agenda",
+          "detail": "Temple day, shopping, or rest. Coordinate in the Doc.",
+          "status": null,
+          "mapsQuery": "Kyoto",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-12",
+      "date": "2026-10-12",
+      "weekday": "Monday",
+      "title": "Amanohashidate day trip",
+      "city": "Amanohashidate",
+      "summary": "JR Hashidate Limited Express (~2hr). Advance reservation. Snacks required — no food service.",
+      "callouts": [
+        "Videos: https://www.youtube.com/watch?v=A2iWvYmhFa8 and https://www.youtube.com/watch?v=kbtQYPlAh-A"
+      ],
+      "items": [
+        {
+          "id": "d12-train",
+          "type": "train",
+          "title": "JR Hashidate Limited Express",
+          "detail": "~2hr. ADVANCE RESERVATION. No food service — bring snacks. Return to Kyoto same day.",
+          "status": "Plan — reserve ahead",
+          "mapsQuery": "Amanohashidate Station",
+          "mapsUrl": null
+        },
+        {
+          "id": "d12-crab",
+          "type": "food",
+          "title": "Seafood Atelier Hashidate Produce crab bento",
+          "detail": "Alyssa priority.",
+          "status": null,
+          "mapsQuery": "Seafood Atelier Hashidate Produce",
+          "mapsUrl": null
+        },
+        {
+          "id": "d12-viewland",
+          "type": "place",
+          "title": "Viewland Park chairlift or funicular",
+          "detail": "Pete must: chairlift. Safer for Ellie: funicular.",
+          "status": null,
+          "mapsQuery": "Amanohashidate Viewland",
+          "mapsUrl": null
+        },
+        {
+          "id": "d12-sandbar",
+          "type": "place",
+          "title": "Bike / walk sandbar ~3km",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Amanohashidate sandbar",
+          "mapsUrl": null
+        },
+        {
+          "id": "d12-dinner",
+          "type": "food",
+          "title": "Dinner seafood TBD",
+          "detail": "Then train back to Kyoto.",
+          "status": null,
+          "mapsQuery": "Amanohashidate seafood",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-13",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "title": "A&P Nachi side quest · Kyoto TBD",
+      "city": "Nachikatsuura / Kyoto",
+      "summary": "A&P: Nachikatsuura / Nachi Falls mid/late morning. Rest of party TBD in Kyoto.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d13-nachi",
+          "type": "place",
+          "title": "Nachikatsuura / Nachi Falls (A&P)",
+          "detail": "Mid/late morning. A&P reconnect evening Oct 14 after return.",
+          "status": null,
+          "mapsQuery": "Nachi Falls",
+          "mapsUrl": null
+        },
+        {
+          "id": "d13-kyoto",
+          "type": "note",
+          "title": "Rest of party — Kyoto TBD",
+          "detail": "Coordinate in the Google Doc.",
+          "status": null,
+          "mapsQuery": "Kyoto",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-14",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "title": "Kyoto → Tokyo Ginza",
+      "city": "Tokyo (Ginza)",
+      "summary": "Return Shinkansen ~11:13 → Tokyo ~13:24–13:33. Check in Koko Hotel Ginza. A&P reconnect evening.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d14-checkout",
+          "type": "stay",
+          "title": "Checkout Hotel Kyoto Shijo Kawaramachi",
+          "detail": "Checkout 11am.",
+          "status": "Booked",
+          "mapsQuery": "Hotel Kyoto Shijo Kawaramachi",
+          "mapsUrl": null
+        },
+        {
+          "id": "d14-shinkansen",
+          "type": "train",
+          "title": "Shinkansen Kyoto → Tokyo",
+          "detail": "Kyoto ~11:13 → Tokyo ~13:24–13:33. Green Car 8 seats. Planned / not ticketed yet.",
+          "status": "Planned / not ticketed yet",
+          "mapsQuery": "Tokyo Station",
+          "mapsUrl": null
+        },
+        {
+          "id": "d14-hotel",
+          "type": "stay",
+          "title": "Koko Hotel Ginza 1-chome",
+          "detail": "Check-in 3pm. Booked.",
+          "status": "Booked",
+          "mapsQuery": "Koko Hotel Ginza 1-chome",
+          "mapsUrl": null
+        },
+        {
+          "id": "d14-reconnect",
+          "type": "note",
+          "title": "A&P reconnect evening",
+          "detail": "After Nachi side quest.",
+          "status": null,
+          "mapsQuery": null,
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-15",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "title": "Akihabara · Asakusa · Skytree",
+      "city": "Tokyo",
+      "summary": "Akihabara / Taito / Asakusa / Skytree loop — games, food, knives, views.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d15-akihabara",
+          "type": "place",
+          "title": "Akihabara — games / gachapon",
+          "detail": "Marco focus.",
+          "status": null,
+          "mapsQuery": "Akihabara Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-kappabashi",
+          "type": "place",
+          "title": "Kappabashi",
+          "detail": "Kitchen street.",
+          "status": null,
+          "mapsQuery": "Kappabashi Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-seive",
+          "type": "food",
+          "title": "Seive Matcha",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Seive Matcha Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-melon",
+          "type": "food",
+          "title": "Asakusa Kagetsudō Melon Bread",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kagetsudo Melon Bread Asakusa",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-zaku",
+          "type": "place",
+          "title": "Zaku Knives",
+          "detail": "https://zakuknives.com/",
+          "status": null,
+          "mapsQuery": "Zaku Knives Tokyo",
+          "mapsUrl": null,
+          "link": "https://zakuknives.com/"
+        },
+        {
+          "id": "d15-kimono",
+          "type": "place",
+          "title": "Kimono Reborn Tokyo",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kimono Reborn Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-origami",
+          "type": "place",
+          "title": "Tokyo Origami Museum?",
+          "detail": "Optional / confirm.",
+          "status": null,
+          "mapsQuery": "Tokyo Origami Museum",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-skytree",
+          "type": "place",
+          "title": "Skytree area",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Tokyo Skytree",
+          "mapsUrl": null
+        },
+        {
+          "id": "d15-pizza",
+          "type": "food",
+          "title": "Parazzo San Gusto pizza?",
+          "detail": "Optional.",
+          "status": null,
+          "mapsQuery": "Parazzo San Gusto Tokyo",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-16",
+      "date": "2026-10-16",
+      "weekday": "Friday",
+      "title": "Mom's birthday! Shinjuku / Shibuya",
+      "city": "Tokyo",
+      "summary": "Birthday day — Imperial Palace, Samurai Museum, cameras, tacos, Donki, ramen, Shibuya night view.",
+      "callouts": [
+        "Happy birthday, Mom!"
+      ],
+      "items": [
+        {
+          "id": "d16-palace",
+          "type": "place",
+          "title": "Imperial Palace",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Imperial Palace Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-samurai",
+          "type": "place",
+          "title": "Samurai Museum (A&P)",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Samurai Museum Shinjuku",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-godzilla",
+          "type": "place",
+          "title": "Godzilla Head",
+          "detail": "Shinjuku.",
+          "status": null,
+          "mapsQuery": "Godzilla Head Shinjuku",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-camera",
+          "type": "place",
+          "title": "Used Camera Box / Tokyo Used Camera",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Tokyo Used Camera",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-tacos",
+          "type": "food",
+          "title": "Tacos 3 Hermanos",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Tacos 3 Hermanos Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-cola",
+          "type": "food",
+          "title": "Iyoshi Cola",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Iyoshi Cola Tokyo",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-donki",
+          "type": "place",
+          "title": "Don Quijote Mega",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Don Quijote Mega Shinjuku",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-ramen",
+          "type": "food",
+          "title": "Ramen family dinner TBD",
+          "detail": "Maybe Shojin vegetarian ramen.",
+          "status": null,
+          "mapsQuery": "Shojin Tokyo ramen",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-shibuya",
+          "type": "place",
+          "title": "Shibuya Crossing / Hikarie Sky Lobby",
+          "detail": "Night view.",
+          "status": null,
+          "mapsQuery": "Shibuya Hikarie Sky Lobby",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-17",
+      "date": "2026-10-17",
+      "weekday": "Saturday",
+      "title": "Enoshima / Kamakura day trip",
+      "city": "Enoshima",
+      "summary": "Tokyo/Yurakucho → Ofuna → Shonan Monorail (~90min). Sea Candle, caves, optional Enoden.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d17-transit",
+          "type": "transit",
+          "title": "Tokyo / Yurakucho → Ofuna → Shonan Monorail",
+          "detail": "~90 minutes to Enoshima.",
+          "status": "Plan",
+          "mapsQuery": "Enoshima Station Shonan Monorail",
+          "mapsUrl": null
+        },
+        {
+          "id": "d17-cave",
+          "type": "place",
+          "title": "Enoshima Iwaya Cave via Sea Candle",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Enoshima Iwaya Cave",
+          "mapsUrl": null
+        },
+        {
+          "id": "d17-enoden",
+          "type": "train",
+          "title": "Optional Enoshima Electric Railway",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Enoshima Electric Railway",
+          "mapsUrl": null
+        },
+        {
+          "id": "d17-sasuke",
+          "type": "place",
+          "title": "Sasuke Inari (fox shrine)",
+          "detail": "Try if time.",
+          "status": null,
+          "mapsQuery": "Sasuke Inari Shrine Kamakura",
+          "mapsUrl": null
+        }
+      ]
+    },
+    {
+      "id": "day-2026-10-18",
+      "date": "2026-10-18",
+      "weekday": "Sunday",
+      "title": "Homeward — Haneda → LAX",
+      "city": "Tokyo (Haneda)",
+      "summary": "Checkout Ginza, head to Haneda. Return flight ~9pm HND → LAX 3:10pm.",
+      "callouts": [],
+      "items": [
+        {
+          "id": "d18-checkout",
+          "type": "stay",
+          "title": "Checkout Koko Hotel Ginza",
+          "detail": "Checkout 11am. Luggage plan TBD.",
+          "status": "Booked",
+          "mapsQuery": "Koko Hotel Ginza 1-chome",
+          "mapsUrl": null
+        },
+        {
+          "id": "d18-flight",
+          "type": "flight",
+          "title": "Return flight Haneda ~9pm → LAX 3:10pm",
+          "detail": "Doc notes 9:05pm; booked ~9pm HND. Align departure buffer.",
+          "status": "Booked",
+          "mapsQuery": "Haneda Airport",
+          "mapsUrl": null
+        }
+      ]
+    }
+  ],
+  "stays": [
+    {
+      "id": "stay-haneda",
+      "name": "Villa Fontaine Premier Terminal 3",
+      "area": "Haneda Airport",
+      "nights": "Oct 9",
+      "checkIn": "evening (after ~9pm arrival)",
+      "checkOut": "morning Oct 10",
+      "status": "Booked",
+      "mapsQuery": "Villa Fontaine Premier Haneda Airport Terminal 3",
+      "mapsUrl": null,
+      "notes": "Arrive Haneda ~9pm Oct 9. Prefer jumbo van to Shinagawa morning of Oct 10 (not Keikyu with 8 + bags)."
+    },
+    {
+      "id": "stay-kyoto",
+      "name": "Hotel Kyoto Shijo Kawaramachi",
+      "area": "Kyoto — Shijo Kawaramachi",
+      "nights": "Oct 10–14",
+      "checkIn": "2:00pm",
+      "checkOut": "11:00am",
+      "status": "Booked",
+      "mapsQuery": "Hotel Kyoto Shijo Kawaramachi",
+      "mapsUrl": null,
+      "notes": "NOT Forza. Doc still mentions Forza — confirm with Alyssa if needed.",
+      "mismatch": "Doc still says Hotel Forza Kyoto — booked hotel is Hotel Kyoto Shijo Kawaramachi."
+    },
+    {
+      "id": "stay-ginza",
+      "name": "Koko Hotel Ginza 1-chome",
+      "area": "Tokyo — Ginza",
+      "nights": "Oct 14–18",
+      "checkIn": "3:00pm",
+      "checkOut": "11:00am",
+      "status": "Booked",
+      "mapsQuery": "Koko Hotel Ginza 1-chome",
+      "mapsUrl": null,
+      "notes": "Aim for Ginza check-in after return Shinkansen (~1:24–1:33pm Tokyo)."
+    }
+  ],
+  "trains": [
+    {
+      "id": "train-nozomi-27",
+      "label": "Outbound Shinkansen — Nozomi 27",
+      "date": "2026-10-10",
+      "from": "Tokyo 11:12 / Shinagawa 11:19",
+      "to": "Kyoto 13:23",
+      "car": "Green Car — 8 reserved seats",
+      "status": "Planned / not ticketed yet",
+      "notes": "SmartEX not purchased yet. Prefer jumbo van Haneda→Shinagawa morning (not Keikyu with 8 + bags).",
+      "mismatch": "Doc says “2pm Shinkansen” — booked plan is mid-morning Nozomi 27."
+    },
+    {
+      "id": "train-return",
+      "label": "Return Shinkansen — Kyoto → Tokyo",
+      "date": "2026-10-14",
+      "from": "Kyoto ~11:13",
+      "to": "Tokyo ~13:24–13:33",
+      "car": "Green Car — 8 reserved seats",
+      "status": "Planned / not ticketed yet",
+      "notes": "Aim for Koko Hotel Ginza 3pm check-in. SmartEX not purchased yet."
+    },
+    {
+      "id": "train-hashidate",
+      "label": "JR Hashidate Limited Express (Amanohashidate)",
+      "date": "2026-10-12",
+      "from": "Kyoto",
+      "to": "Amanohashidate (~2hr)",
+      "car": "Advance reservation required",
+      "status": "Plan — reserve ahead",
+      "notes": "No food service — bring snacks. Return same day to Kyoto."
+    },
+    {
+      "id": "train-enoshima",
+      "label": "Enoshima / Kamakura day trip",
+      "date": "2026-10-17",
+      "from": "Tokyo / Yurakucho → Ofuna",
+      "to": "Shonan Monorail → Enoshima (~90min total)",
+      "car": "Local + monorail",
+      "status": "Plan",
+      "notes": "Optional Enoshima Electric Railway."
+    }
+  ],
+  "phrases": {
+    "pronunciationTip": "Japanese vowels are pure and short: a (ah), i (ee), u (oo), e (eh), o (oh). Give each syllable even stress. Pitch accent matters more than English-style stress — listen and mimic.",
+    "categories": [
+      {
+        "id": "greetings",
+        "name": "Greetings & courtesy",
+        "items": [
+          {
+            "id": "p-ohayo",
+            "ja": "おはようございます",
+            "romaji": "ohayō gozaimasu",
+            "en": "Good morning"
+          },
+          {
+            "id": "p-konnichiwa",
+            "ja": "こんにちは",
+            "romaji": "konnichiwa",
+            "en": "Hello / Good afternoon"
+          },
+          {
+            "id": "p-konbanwa",
+            "ja": "こんばんは",
+            "romaji": "konbanwa",
+            "en": "Good evening"
+          },
+          {
+            "id": "p-sayonara",
+            "ja": "さようなら",
+            "romaji": "sayōnara",
+            "en": "Goodbye"
+          },
+          {
+            "id": "p-arigato",
+            "ja": "ありがとうございます",
+            "romaji": "arigatō gozaimasu",
+            "en": "Thank you (polite)"
+          },
+          {
+            "id": "p-sumimasen",
+            "ja": "すみません",
+            "romaji": "sumimasen",
+            "en": "Excuse me / Sorry"
+          },
+          {
+            "id": "p-hajimemashite",
+            "ja": "はじめまして",
+            "romaji": "hajimemashite",
+            "en": "Nice to meet you"
+          },
+          {
+            "id": "p-hai",
+            "ja": "はい",
+            "romaji": "Hai",
+            "en": "Yes"
+          },
+          {
+            "id": "p-ie",
+            "ja": "いいえ",
+            "romaji": "Ie (“ee-eh”)",
+            "en": "No"
+          },
+          {
+            "id": "p-daijobu",
+            "ja": "大丈夫です",
+            "romaji": "daijobu des",
+            "en": "I'm fine / It's okay"
+          },
+          {
+            "id": "p-onegai",
+            "ja": "お願いします",
+            "romaji": "onegai shimasu",
+            "en": "Please (request)"
+          },
+          {
+            "id": "p-dozo",
+            "ja": "どうぞ",
+            "romaji": "dōzo",
+            "en": "Please (go ahead / here you are)"
+          },
+          {
+            "id": "p-ogenki",
+            "ja": "お元気ですか",
+            "romaji": "ogenki desu ka",
+            "en": "How are you?"
+          }
+        ]
+      },
+      {
+        "id": "getting-around",
+        "name": "Getting around",
+        "items": [
+          {
+            "id": "p-wa-doko",
+            "ja": "…はどこですか",
+            "romaji": "… wa doko desu ka",
+            "en": "Where is …?"
+          },
+          {
+            "id": "p-eki",
+            "ja": "駅はどこですか",
+            "romaji": "eki wa doko desu ka",
+            "en": "Where is the station?"
+          },
+          {
+            "id": "p-densha",
+            "ja": "この電車は…に行きますか",
+            "romaji": "kono densha wa … ni ikimasu ka",
+            "en": "Does this train go to …?"
+          },
+          {
+            "id": "p-kippu",
+            "ja": "切符をください",
+            "romaji": "kippu o kudasai",
+            "en": "A ticket, please"
+          },
+          {
+            "id": "p-ikura-train",
+            "ja": "いくらですか",
+            "romaji": "ikura desu ka",
+            "en": "How much is it?"
+          },
+          {
+            "id": "p-norikae",
+            "ja": "乗り換えはどこですか",
+            "romaji": "norikae wa doko desu ka",
+            "en": "Where do I transfer?"
+          },
+          {
+            "id": "p-basutei",
+            "ja": "バス停はどこですか",
+            "romaji": "basutei wa doko desu ka",
+            "en": "Where is the bus stop?"
+          },
+          {
+            "id": "p-chizu",
+            "ja": "地図を見せてください",
+            "romaji": "chizu o misete kudasai",
+            "en": "Please show me a map"
+          },
+          {
+            "id": "p-orimasu",
+            "ja": "ここで降ります",
+            "romaji": "koko de orimasu",
+            "en": "I'm getting off here"
+          },
+          {
+            "id": "p-toire",
+            "ja": "トイレはどこですか",
+            "romaji": "toire wa doko desu ka",
+            "en": "Where is the restroom?"
+          }
+        ]
+      },
+      {
+        "id": "eating",
+        "name": "Eating",
+        "items": [
+          {
+            "id": "p-menu",
+            "ja": "メニューをください",
+            "romaji": "menyū o kudasa",
+            "en": "Menu, please"
+          },
+          {
+            "id": "p-osusume",
+            "ja": "おすすめは何ですか",
+            "romaji": "osusume wa nan desu ka",
+            "en": "What do you recommend?"
+          },
+          {
+            "id": "p-arimasu",
+            "ja": "…はありますか",
+            "romaji": "… wa arimasu ka",
+            "en": "Do you have …?"
+          },
+          {
+            "id": "p-veg",
+            "ja": "ペスカタリアンです",
+            "romaji": "pesukatarian desu",
+            "en": "I'm a pescatarian"
+          },
+          {
+            "id": "p-omizu",
+            "ja": "お水をください",
+            "romaji": "omizu o kudasai",
+            "en": "Water, please"
+          },
+          {
+            "id": "p-kore-des",
+            "ja": "これですください",
+            "romaji": "Kore des kudasai",
+            "en": "This one, please"
+          },
+          {
+            "id": "p-itadakimasu",
+            "ja": "いただきます",
+            "romaji": "itadakimasu",
+            "en": "Let's eat (before meal)"
+          },
+          {
+            "id": "p-gochisosama",
+            "ja": "ごちそうさまでした",
+            "romaji": "gochisōsama deshita",
+            "en": "Thank you for the meal"
+          },
+          {
+            "id": "p-betsubetsu",
+            "ja": "別々でお願いします",
+            "romaji": "betsubetsu de onegai shimasu",
+            "en": "Separate checks, please"
+          },
+          {
+            "id": "p-okaikei",
+            "ja": "お会計をお願いします",
+            "romaji": "okaikei o onegai shimasu",
+            "en": "Check, please"
+          },
+          {
+            "id": "p-oishii",
+            "ja": "おいしいです",
+            "romaji": "oishii desu",
+            "en": "It's delicious"
+          }
+        ]
+      },
+      {
+        "id": "shopping",
+        "name": "Shopping",
+        "items": [
+          {
+            "id": "p-ikura-shop",
+            "ja": "いくらですか",
+            "romaji": "ikura desu ka",
+            "en": "How much is it?"
+          },
+          {
+            "id": "p-kore-kudasai",
+            "ja": "これをください",
+            "romaji": "kore o kudasai",
+            "en": "I'll take this"
+          },
+          {
+            "id": "p-card",
+            "ja": "クレジットカードは使えますか",
+            "romaji": "kurejitto kādo wa tsukaemasu ka",
+            "en": "Can I use a credit card?"
+          },
+          {
+            "id": "p-genkin",
+            "ja": "現金",
+            "romaji": "Genkin",
+            "en": "Cash"
+          },
+          {
+            "id": "p-misete",
+            "ja": "見せてください",
+            "romaji": "o misete kudasai",
+            "en": "Please show me"
+          },
+          {
+            "id": "p-ikko",
+            "ja": "一個ください",
+            "romaji": "o ikko kudasai",
+            "en": "One, please"
+          },
+          {
+            "id": "p-menzei",
+            "ja": "免税できますか",
+            "romaji": "menzei dekimasu ka",
+            "en": "Can I get tax-free?"
+          },
+          {
+            "id": "p-fukuro",
+            "ja": "袋は要りますか",
+            "romaji": "fukuro wa irimasu ka",
+            "en": "Do you need a bag?"
+          },
+          {
+            "id": "p-atatame",
+            "ja": "温めますか",
+            "romaji": "Atatamemasu ka?",
+            "en": "Shall I warm it up?"
+          }
+        ]
+      },
+      {
+        "id": "hotels",
+        "name": "Hotels & airports",
+        "items": [
+          {
+            "id": "p-yoyaku",
+            "ja": "予約しています",
+            "romaji": "yoyaku shiteimasu",
+            "en": "I have a reservation"
+          },
+          {
+            "id": "p-checkin",
+            "ja": "チェックインをお願いします",
+            "romaji": "chekkuin o onegai shimasu",
+            "en": "Check-in, please"
+          },
+          {
+            "id": "p-passport",
+            "ja": "パスポートでいいですか",
+            "romaji": "pasupōto de iidesu ka?",
+            "en": "Is a passport OK?"
+          },
+          {
+            "id": "p-choshoku",
+            "ja": "朝食は何時ですか",
+            "romaji": "chōshoku wa nanji desu ka",
+            "en": "What time is breakfast?"
+          },
+          {
+            "id": "p-wifi",
+            "ja": "Wi-Fiはありますか",
+            "romaji": "waifai wa arimasu ka",
+            "en": "Is there Wi-Fi?"
+          },
+          {
+            "id": "p-nimotsu",
+            "ja": "荷物を預けてもいいですか",
+            "romaji": "nimotsu o azukete mo ii desu ka",
+            "en": "May I leave my luggage?"
+          }
+        ]
+      },
+      {
+        "id": "emergencies",
+        "name": "Emergencies",
+        "items": [
+          {
+            "id": "p-tasukete",
+            "ja": "助けてください",
+            "romaji": "tasukete kudasai",
+            "en": "Please help me"
+          },
+          {
+            "id": "p-byoin",
+            "ja": "病院はどこですか",
+            "romaji": "byōin wa doko desu ka",
+            "en": "Where is the hospital?"
+          },
+          {
+            "id": "p-yakkyoku",
+            "ja": "薬局はどこですか",
+            "romaji": "yakkyoku wa doko desu ka",
+            "en": "Where is the pharmacy?"
+          },
+          {
+            "id": "p-keisatsu",
+            "ja": "警察を呼んでください",
+            "romaji": "keisatsu o yonde kudasai",
+            "en": "Please call the police"
+          },
+          {
+            "id": "p-mayoimashita",
+            "ja": "道に迷いました",
+            "romaji": "michi ni mayoimashita",
+            "en": "I'm lost"
+          },
+          {
+            "id": "p-nakushimashita",
+            "ja": "…をなくしました",
+            "romaji": "… o nakushimashita",
+            "en": "I lost …"
+          },
+          {
+            "id": "p-119",
+            "ja": "119",
+            "romaji": "119",
+            "en": "Ambulance / fire"
+          },
+          {
+            "id": "p-110",
+            "ja": "110",
+            "romaji": "110",
+            "en": "Police"
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "doc": "https://docs.google.com/document/d/1t0yKSCdpAXDrOtdceFMqJ7ZXoe6zh-OmAR-z8jigMEA/edit",
+    "kansaiPassVideo": "https://www.youtube.com/watch?v=Axqxa-FB73s",
+    "amanohashidateVideo1": "https://www.youtube.com/watch?v=A2iWvYmhFa8",
+    "amanohashidateVideo2": "https://www.youtube.com/watch?v=kbtQYPlAh-A",
+    "zakuKnives": "https://zakuknives.com/",
+    "nishikiMaps": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9"
+  },
+  "party": {
+    "party": "6 adults, one 10-year-old (Marco), one toddler Ellie (~23 months on the trip) = 8 people.",
+    "notes": [
+      "Shared itinerary lives in the Google Doc — edit there so everyone sees updates.",
+      "This phone app stores done/visited, stars, and personal notes in localStorage only (per device).",
+      "Flights: Land Haneda ~9pm Oct 9; home Haneda ~9pm Oct 18 → LAX 3:10pm.",
+      "Prefer jumbo van Haneda→Shinagawa morning of Oct 10 (not Keikyu with 8 + bags).",
+      "Shinkansen: Green Car, 8 reserved seats — SmartEX not purchased yet.",
+      "A&P side quests: Nachi Falls (Oct 13), Samurai Museum (Oct 16), Yasaka Pagoda & Yogen-in (Oct 10).",
+      "Mom's birthday Oct 16 — celebrate in Shinjuku/Shibuya!",
+      "No passport numbers or payment cards in this public site."
+    ],
+    "priorities": [
+      {
+        "who": "Alyssa",
+        "what": "Seafood Atelier Hashidate crab bento; confirm Forza→Shijo Kawaramachi doc note"
+      },
+      {
+        "who": "Pete",
+        "what": "Viewland chairlift; Samurai Museum; Yasaka Pagoda & Yogen-in"
+      },
+      {
+        "who": "Marco",
+        "what": "Akihabara games / gachapon"
+      },
+      {
+        "who": "Ellie",
+        "what": "Prefer funicular over chairlift at Viewland when possible"
+      },
+      {
+        "who": "Mom",
+        "what": "Birthday day Oct 16 — Shinjuku/Shibuya celebration"
+      }
+    ]
+  }
+};
+
+(function () {
+  'use strict';
+
+  const DATA = window.TRIP_DATA;
+  if (!DATA) {
+    console.error('TRIP_DATA missing — run scripts/sync-data.js');
+    return;
+  }
+
+  const STORAGE_KEY = 'circus-vargas-japan-v1';
+  const TZ = DATA.meta.timezone || 'Asia/Tokyo';
+
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch {
+      return {};
+    }
+  }
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+  let state = loadState();
+
+  function itemKey(dayId, itemId) {
+    return `${dayId}::${itemId}`;
+  }
+  function getItemState(dayId, itemId) {
+    const k = itemKey(dayId, itemId);
+    return state[k] || { done: false, star: false, note: '' };
+  }
+  function setItemState(dayId, itemId, patch) {
+    const k = itemKey(dayId, itemId);
+    state[k] = { ...getItemState(dayId, itemId), ...patch };
+    saveState(state);
+  }
+
+  function mapsLink(query, mapsUrl) {
+    if (mapsUrl) return mapsUrl;
+    if (!query) return null;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  }
+  function searchLink(query) {
+    if (!query) return null;
+    return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  }
+
+  function tokyoYmd(d = new Date()) {
+    return new Intl.DateTimeFormat('en-CA', {
+      timeZone: TZ,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(d);
+  }
+
+  function statusPill(status) {
+    if (!status) return '';
+    const s = status.toLowerCase();
+    let cls = 'pill-plan';
+    if (s.includes('booked')) cls = 'pill-booked';
+    else if (s.includes('not ticketed') || s.includes('planned')) cls = 'pill-planned';
+    return `<span class="pill ${cls}">${escapeHtml(status)}</span>`;
+  }
+
+  function escapeHtml(str) {
+    return String(str ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function linkify(text) {
+    const escaped = escapeHtml(text);
+    return escaped.replace(
+      /(https?:\/\/[^\s<]+)/g,
+      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+    );
+  }
+
+  function daysUntilTrip(todayYmd) {
+    const start = DATA.meta.tripStart;
+    const a = new Date(todayYmd + 'T12:00:00Z');
+    const b = new Date(start + 'T12:00:00Z');
+    return Math.round((b - a) / 86400000);
+  }
+
+  function findDay(dateStr) {
+    return DATA.days.find((d) => d.date === dateStr) || null;
+  }
+
+  function renderItem(day, item) {
+    const st = getItemState(day.id, item.id);
+    const map = mapsLink(item.mapsQuery, item.mapsUrl);
+    const search = searchLink(item.mapsQuery || item.title);
+    const doneClass = st.done ? ' done' : '';
+    return `
+      <article class="item${doneClass}" data-day="${escapeHtml(day.id)}" data-item="${escapeHtml(item.id)}">
+        <div class="item-top">
+          <div class="item-checks">
+            <label title="Done / visited">
+              <span class="sr-only">Done / visited</span>
+              <input class="chk js-done" type="checkbox" ${st.done ? 'checked' : ''} aria-label="Mark done">
+            </label>
+            <button type="button" class="btn-icon js-star" aria-label="Favorite" aria-pressed="${st.star ? 'true' : 'false'}">${st.star ? '★' : '☆'}</button>
+          </div>
+          <div class="item-body">
+            <div class="item-title">${escapeHtml(item.title)} ${statusPill(item.status)}</div>
+            ${item.detail ? `<div class="item-detail">${linkify(item.detail)}</div>` : ''}
+            <div class="item-actions">
+              ${map ? `<a class="btn btn-sm btn-ghost" style="background:#fef2f2;color:var(--red-deep);border:1px solid var(--border)" href="${escapeHtml(map)}" target="_blank" rel="noopener noreferrer">Maps</a>` : ''}
+              ${search ? `<a class="btn btn-sm btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(search)}" target="_blank" rel="noopener noreferrer">Search</a>` : ''}
+              ${item.link ? `<a class="btn btn-sm btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Link</a>` : ''}
+            </div>
+            <label class="sr-only" for="note-${escapeHtml(item.id)}">Personal note</label>
+            <textarea id="note-${escapeHtml(item.id)}" class="item-note js-note" placeholder="Personal note (this phone only)…" rows="1">${escapeHtml(st.note)}</textarea>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function renderDayCard(day, opts = {}) {
+    const callouts = (day.callouts || [])
+      .map((c) => `<div class="callout">${linkify(c)}</div>`)
+      .join('');
+    const items = (day.items || []).map((it) => renderItem(day, it)).join('');
+    return `
+      <section class="card" ${opts.id ? `id="${escapeHtml(opts.id)}"` : ''}>
+        <div class="day-title-row">
+          <h2>${escapeHtml(day.title)}</h2>
+        </div>
+        <p class="muted">${escapeHtml(day.weekday)} · ${escapeHtml(day.date)} · ${escapeHtml(day.city || '')}</p>
+        <p>${escapeHtml(day.summary || '')}</p>
+        ${callouts}
+        ${items}
+      </section>`;
+  }
+
+  function renderToday() {
+    const el = document.getElementById('panel-today');
+    const today = tokyoYmd();
+    const start = DATA.meta.tripStart;
+    const end = DATA.meta.tripEnd;
+    const day = findDay(today);
+
+    if (today < start) {
+      const n = daysUntilTrip(today);
+      el.innerHTML = `
+        <div class="card countdown">
+          <p class="muted">Tokyo time · trip starts Oct 9, 2026</p>
+          <div class="big">${n}</div>
+          <p><strong>day${n === 1 ? '' : 's'} until Circus Vargas lands in Japan</strong></p>
+          <p class="muted">Party: ${escapeHtml(DATA.meta.partySize)}</p>
+        </div>
+        ${renderDayCard(DATA.days[0], { id: 'preview-first' })}
+        <p class="muted" style="text-align:center">Showing arrival day preview. Switch to Itinerary for the full plan.</p>`;
+      wireItemControls(el);
+      return;
+    }
+
+    if (today > end) {
+      el.innerHTML = `
+        <div class="card countdown">
+          <div class="big">🎪</div>
+          <p><strong>Trip complete — thanks for the memories!</strong></p>
+          <p class="muted">Oct 9–18, 2026 · browse Itinerary anytime.</p>
+        </div>`;
+      return;
+    }
+
+    if (day) {
+      el.innerHTML = `
+        <p class="muted" style="margin:0 0 8px">Today in Tokyo time · ${escapeHtml(today)}</p>
+        ${renderDayCard(day)}`;
+      wireItemControls(el);
+    } else {
+      el.innerHTML = `<div class="card"><p>No day entry for ${escapeHtml(today)}.</p></div>`;
+    }
+  }
+
+  let selectedItinDate = null;
+
+  function renderItinerary() {
+    const el = document.getElementById('panel-itinerary');
+    if (!selectedItinDate) {
+      const today = tokyoYmd();
+      if (today >= DATA.meta.tripStart && today <= DATA.meta.tripEnd && findDay(today)) {
+        selectedItinDate = today;
+      } else {
+        selectedItinDate = DATA.days[0].date;
+      }
+    }
+    const chips = DATA.days
+      .map((d) => {
+        const label = d.date.slice(5).replace('-', '/');
+        const sel = d.date === selectedItinDate;
+        return `<button type="button" class="day-chip js-day-chip" data-date="${escapeHtml(d.date)}" aria-selected="${sel}">
+          <span class="d">${escapeHtml(label.split('/')[1])}</span>
+          ${escapeHtml(d.weekday.slice(0, 3))}
+        </button>`;
+      })
+      .join('');
+    const day = findDay(selectedItinDate) || DATA.days[0];
+    el.innerHTML = `
+      <div class="day-picker" role="tablist" aria-label="Trip days">${chips}</div>
+      ${renderDayCard(day)}`;
+    el.querySelectorAll('.js-day-chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedItinDate = btn.dataset.date;
+        renderItinerary();
+      });
+    });
+    wireItemControls(el);
+  }
+
+  function wireItemControls(root) {
+    root.querySelectorAll('.item').forEach((article) => {
+      const dayId = article.dataset.day;
+      const itemId = article.dataset.item;
+      const done = article.querySelector('.js-done');
+      const star = article.querySelector('.js-star');
+      const note = article.querySelector('.js-note');
+      done.addEventListener('change', () => {
+        setItemState(dayId, itemId, { done: done.checked });
+        article.classList.toggle('done', done.checked);
+      });
+      star.addEventListener('click', () => {
+        const cur = getItemState(dayId, itemId);
+        const next = !cur.star;
+        setItemState(dayId, itemId, { star: next });
+        star.setAttribute('aria-pressed', next ? 'true' : 'false');
+        star.textContent = next ? '★' : '☆';
+      });
+      note.addEventListener('input', () => {
+        setItemState(dayId, itemId, { note: note.value });
+      });
+    });
+  }
+
+  let phraseCat = 'all';
+  let phraseQuery = '';
+
+  function renderPhrases() {
+    const el = document.getElementById('panel-phrases');
+    const cats = DATA.phrases.categories;
+    const chips = [
+      `<button type="button" class="cat-chip js-cat" data-cat="all" aria-selected="${phraseCat === 'all'}">All</button>`,
+      ...cats.map(
+        (c) =>
+          `<button type="button" class="cat-chip js-cat" data-cat="${escapeHtml(c.id)}" aria-selected="${phraseCat === c.id}">${escapeHtml(c.name)}</button>`
+      )
+    ].join('');
+
+    let items = cats.flatMap((c) =>
+      c.items.map((it) => ({ ...it, category: c.name, catId: c.id }))
+    );
+    if (phraseCat !== 'all') items = items.filter((i) => i.catId === phraseCat);
+    const q = phraseQuery.trim().toLowerCase();
+    if (q) {
+      items = items.filter(
+        (i) =>
+          (i.ja && i.ja.toLowerCase().includes(q)) ||
+          (i.romaji && i.romaji.toLowerCase().includes(q)) ||
+          (i.en && i.en.toLowerCase().includes(q)) ||
+          (i.category && i.category.toLowerCase().includes(q))
+      );
+    }
+
+    const cards = items
+      .map(
+        (p) => `
+      <div class="phrase-unit">
+      <button type="button" class="phrase-card js-phrase" data-copy="${escapeHtml(p.ja || p.romaji)}" aria-label="Flip phrase: ${escapeHtml(p.romaji)}">
+        <div class="phrase-inner">
+          <div class="phrase-face front">
+            <div class="phrase-ja">${escapeHtml(p.ja || p.romaji)}</div>
+            <div class="phrase-romaji">${escapeHtml(p.romaji)}</div>
+            <div class="phrase-hint">Tap to reveal English</div>
+          </div>
+          <div class="phrase-face back">
+            <div class="phrase-en">${escapeHtml(p.en)}</div>
+            <div class="phrase-romaji">${escapeHtml(p.romaji)}</div>
+            <div class="phrase-ja" style="font-size:1rem;margin-top:6px">${escapeHtml(p.ja || '')}</div>
+          </div>
+        </div>
+      </button>
+      <div class="phrase-tools">
+        <button type="button" class="btn btn-sm btn-ghost js-copy" style="background:#fff;color:var(--ink);border:1px solid var(--border)" data-copy="${escapeHtml(p.ja || p.romaji)}">Copy Japanese</button>
+      </div>
+      </div>`
+      )
+      .join('');
+
+    el.innerHTML = `
+      <div class="card">
+        <h2>Pronunciation tip</h2>
+        <p class="muted">${escapeHtml(DATA.phrases.pronunciationTip)}</p>
+      </div>
+      <div class="search-row">
+        <label class="sr-only" for="phrase-search">Search phrases</label>
+        <input id="phrase-search" type="search" placeholder="Search Japanese, romaji, English…" value="${escapeHtml(phraseQuery)}" autocomplete="off">
+      </div>
+      <div class="cat-tabs" role="tablist">${chips}</div>
+      <div class="phrase-grid">${cards || '<p class="muted">No matches.</p>'}</div>`;
+
+    el.querySelector('#phrase-search').addEventListener('input', (e) => {
+      phraseQuery = e.target.value;
+      renderPhrases();
+      const input = document.getElementById('phrase-search');
+      if (input) {
+        input.focus();
+        const len = input.value.length;
+        input.setSelectionRange(len, len);
+      }
+    });
+    el.querySelectorAll('.js-cat').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        phraseCat = btn.dataset.cat;
+        renderPhrases();
+      });
+    });
+    el.querySelectorAll('.js-phrase').forEach((card) => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+    });
+    el.querySelectorAll('.js-copy').forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const text = btn.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(text);
+          const prev = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => (btn.textContent = prev), 1200);
+        } catch {
+          btn.textContent = 'Copy failed';
+        }
+      });
+    });
+  }
+
+  function renderStays() {
+    const el = document.getElementById('panel-stays');
+    const stays = DATA.stays
+      .map((s) => {
+        const map = mapsLink(s.mapsQuery, s.mapsUrl);
+        return `
+        <article class="card stay-card">
+          <h3>${escapeHtml(s.name)} ${statusPill(s.status)}</h3>
+          <p class="muted">${escapeHtml(s.area)} · ${escapeHtml(s.nights)}</p>
+          <p class="kv"><span>Check-in:</span> ${escapeHtml(s.checkIn)}</p>
+          <p class="kv"><span>Checkout:</span> ${escapeHtml(s.checkOut)}</p>
+          ${s.notes ? `<p class="item-detail">${linkify(s.notes)}</p>` : ''}
+          ${s.mismatch ? `<div class="callout">${escapeHtml(s.mismatch)}</div>` : ''}
+          <div class="item-actions">
+            ${map ? `<a class="btn btn-sm btn-primary" href="${escapeHtml(map)}" target="_blank" rel="noopener noreferrer">Open Maps</a>` : ''}
+            <a class="btn btn-sm btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(searchLink(s.mapsQuery))}" target="_blank" rel="noopener noreferrer">Google</a>
+          </div>
+        </article>`;
+      })
+      .join('');
+
+    const trains = DATA.trains
+      .map((t) => {
+        return `
+        <article class="card">
+          <h3>${escapeHtml(t.label)} ${statusPill(t.status)}</h3>
+          <p class="muted">${escapeHtml(t.date)}</p>
+          <p class="kv"><span>From:</span> ${escapeHtml(t.from)}</p>
+          <p class="kv"><span>To:</span> ${escapeHtml(t.to)}</p>
+          <p class="kv"><span>Seats:</span> ${escapeHtml(t.car)}</p>
+          ${t.notes ? `<p class="item-detail">${linkify(t.notes)}</p>` : ''}
+          ${t.mismatch ? `<div class="callout">${escapeHtml(t.mismatch)}</div>` : ''}
+        </article>`;
+      })
+      .join('');
+
+    el.innerHTML = `
+      <h2 class="sr-only">Stays & trains</h2>
+      <p class="muted" style="margin-top:0">Hotels are authoritative booked facts. Shinkansen Green Car seats are planned — not ticketed yet.</p>
+      ${stays}
+      <h2 style="font-size:1.1rem;margin:18px 0 8px">Trains</h2>
+      ${trains}`;
+  }
+
+  function renderParty() {
+    const el = document.getElementById('panel-party');
+    const notes = (DATA.party.notes || [])
+      .map((n) => `<li>${linkify(n)}</li>`)
+      .join('');
+    const pri = (DATA.party.priorities || [])
+      .map(
+        (p) =>
+          `<li><strong>${escapeHtml(p.who)}:</strong> ${escapeHtml(p.what)}</li>`
+      )
+      .join('');
+    el.innerHTML = `
+      <div class="card">
+        <h2>The circus troupe</h2>
+        <p>${escapeHtml(DATA.party.party)}</p>
+      </div>
+      <div class="card">
+        <h2>Party notes</h2>
+        <ul>${notes}</ul>
+      </div>
+      <div class="card">
+        <h2>Priorities</h2>
+        <ul>${pri}</ul>
+      </div>
+      <div class="card">
+        <h2>Useful links</h2>
+        <div class="item-actions" style="flex-direction:column;align-items:stretch">
+          <a class="btn btn-primary" href="${escapeHtml(DATA.meta.docUrl)}" target="_blank" rel="noopener noreferrer">Edit shared itinerary (Google Doc)</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.kansaiPassVideo)}" target="_blank" rel="noopener noreferrer">Kansai Wide Area Pass video</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo1)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 1</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo2)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 2</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.zakuKnives)}" target="_blank" rel="noopener noreferrer">Zaku Knives</a>
+        </div>
+      </div>`;
+  }
+
+  const panels = {
+    today: renderToday,
+    itinerary: renderItinerary,
+    phrases: renderPhrases,
+    stays: renderStays,
+    party: renderParty
+  };
+
+  function showPanel(name) {
+    document.querySelectorAll('.panel').forEach((p) => {
+      p.classList.toggle('active', p.id === `panel-${name}`);
+    });
+    document.querySelectorAll('.nav-tabs button').forEach((b) => {
+      b.setAttribute('aria-selected', b.dataset.panel === name ? 'true' : 'false');
+    });
+    if (panels[name]) panels[name]();
+    try {
+      sessionStorage.setItem('cvj-tab', name);
+    } catch { /* ignore */ }
+  }
+
+  function init() {
+    document.getElementById('doc-btn').href = DATA.meta.docUrl;
+    document.getElementById('last-synced').textContent = DATA.meta.lastSynced;
+    document.getElementById('banner-text').textContent = DATA.meta.banner;
+
+    document.querySelectorAll('.nav-tabs button').forEach((btn) => {
+      btn.addEventListener('click', () => showPanel(btn.dataset.panel));
+    });
+
+    let start = 'today';
+    try {
+      start = sessionStorage.getItem('cvj-tab') || 'today';
+    } catch { /* ignore */ }
+    showPanel(start);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+  </script>
+</body>
+</html>
