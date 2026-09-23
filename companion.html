@@ -15,7 +15,7 @@
   --red-deep: #7f1d1d;
   --gold: #d4a017;
   --gold-soft: #f0d78c;
-  --cream: #faf6ef;
+  --cream: #fff9f0;
   --ink: #1c1410;
   --ink-soft: #4a3f36;
   --card: #fffdf8;
@@ -24,10 +24,15 @@
   --warn-bg: #fff7ed;
   --warn-border: #fdba74;
   --banner: #1e3a5f;
-  --shadow: 0 2px 12px rgba(28, 20, 16, 0.08);
-  --radius: 14px;
-  --tap: 44px;
+  --shadow: 0 4px 16px rgba(185, 28, 28, 0.08), 0 1px 4px rgba(28, 20, 16, 0.06);
+  --radius: 18px;
+  --tap: 54px;
   --font: "Segoe UI", system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --day-1: #fef2f2;
+  --day-2: #fff7ed;
+  --day-3: #fefce8;
+  --day-4: #f0fdf4;
+  --day-5: #eff6ff;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -35,11 +40,12 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font);
+  font-size: 1.05rem;
   background: var(--cream);
   color: var(--ink);
-  line-height: 1.45;
+  line-height: 1.5;
   min-height: 100dvh;
-  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
 }
 
 a { color: var(--red-deep); }
@@ -54,19 +60,20 @@ button, input, textarea, select {
   z-index: 40;
   background: linear-gradient(135deg, var(--red-deep), var(--red) 55%, #c2410c);
   color: #fff;
-  padding: 12px 16px 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: 14px 16px 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.22);
 }
 .app-header h1 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   letter-spacing: 0.02em;
-  font-weight: 700;
+  font-weight: 800;
 }
 .app-header .tagline {
-  margin: 2px 0 0;
-  font-size: 0.78rem;
-  opacity: 0.92;
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  opacity: 0.95;
+  font-weight: 500;
 }
 .header-actions {
   display: flex;
@@ -80,13 +87,13 @@ button, input, textarea, select {
   justify-content: center;
   gap: 6px;
   min-height: var(--tap);
-  padding: 0 14px;
+  padding: 0 16px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 .btn-primary {
   background: var(--gold);
@@ -108,18 +115,19 @@ button, input, textarea, select {
   outline-offset: 2px;
 }
 .btn-sm {
-  min-height: 36px;
-  padding: 0 10px;
-  font-size: 0.8rem;
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 0.85rem;
 }
 .btn-icon {
   min-width: var(--tap);
   min-height: var(--tap);
   padding: 0;
-  border-radius: 12px;
+  border-radius: 14px;
   background: transparent;
   border: 1px solid var(--border);
   cursor: pointer;
+  font-size: 1.25rem;
 }
 .btn-icon[aria-pressed="true"] {
   background: #fef3c7;
@@ -130,7 +138,7 @@ button, input, textarea, select {
   background: var(--banner);
   color: #e8eef6;
   padding: 10px 16px;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   text-align: center;
 }
 .banner strong { color: #fff; }
@@ -145,27 +153,27 @@ button, input, textarea, select {
   grid-template-columns: repeat(5, 1fr);
   gap: 2px;
   background: #fff;
-  border-top: 1px solid var(--border);
-  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
-  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+  border-top: 2px solid var(--gold-soft);
+  padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
+  box-shadow: 0 -6px 20px rgba(0,0,0,.08);
 }
 .nav-tabs button {
   appearance: none;
   border: none;
   background: transparent;
-  min-height: 52px;
-  border-radius: 10px;
+  min-height: 56px;
+  border-radius: 14px;
   cursor: pointer;
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   color: var(--ink-soft);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
 }
-.nav-tabs button .ico { font-size: 1.15rem; line-height: 1; }
+.nav-tabs button .ico { font-size: 1.5rem; line-height: 1; }
 .nav-tabs button[aria-selected="true"] {
   color: var(--red);
   background: #fef2f2;
@@ -187,20 +195,20 @@ main {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px;
-  margin-bottom: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
   box-shadow: var(--shadow);
 }
 .card h2, .card h3 {
   margin: 0 0 8px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
-.muted { color: var(--ink-soft); font-size: 0.88rem; }
+.muted { color: var(--ink-soft); font-size: 0.92rem; }
 .pill {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   vertical-align: middle;
@@ -212,22 +220,31 @@ main {
 .callout {
   background: var(--warn-bg);
   border: 1px solid var(--warn-border);
-  border-radius: 12px;
-  padding: 10px 12px;
+  border-radius: 14px;
+  padding: 12px 14px;
   margin: 10px 0;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
 }
 .callout a { word-break: break-all; }
 
 .countdown {
   text-align: center;
-  padding: 20px 12px;
+  padding: 24px 14px;
+  background: linear-gradient(165deg, #fff7ed 0%, var(--card) 55%, #fef2f2 100%);
+  border: 2px solid var(--gold-soft);
 }
 .countdown .big {
-  font-size: 2.4rem;
-  font-weight: 800;
+  font-size: 3.2rem;
+  font-weight: 900;
   color: var(--red);
-  line-height: 1.1;
+  line-height: 1.05;
+  text-shadow: 0 2px 0 var(--gold-soft);
+}
+.countdown .countdown-label {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 6px 0 4px;
+  color: var(--red-deep);
 }
 .day-title-row {
   display: flex;
@@ -240,43 +257,59 @@ main {
 
 .item {
   border-top: 1px solid var(--border);
-  padding: 12px 0 10px;
+  padding: 14px 0 12px;
+  position: relative;
 }
 .item:first-of-type { border-top: none; padding-top: 4px; }
 .item.done .item-title { text-decoration: line-through; opacity: 0.65; }
+.item.done::after {
+  content: "★";
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  font-size: 1.35rem;
+  color: var(--gold);
+  animation: stamp-pop 0.35s ease-out;
+  pointer-events: none;
+}
+@keyframes stamp-pop {
+  0% { transform: scale(0.3) rotate(-20deg); opacity: 0; }
+  60% { transform: scale(1.25) rotate(8deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
 .item-top {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
 }
 .item-checks {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex-shrink: 0;
 }
 .item-body { flex: 1; min-width: 0; }
-.item-title { font-weight: 700; font-size: 0.98rem; }
-.item-detail { font-size: 0.86rem; color: var(--ink-soft); margin-top: 2px; }
+.item-title { font-weight: 700; font-size: 1.02rem; }
+.item-detail { font-size: 0.92rem; color: var(--ink-soft); margin-top: 2px; }
 .item-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 8px;
+  margin-top: 10px;
 }
 .item-note {
   width: 100%;
   margin-top: 8px;
-  min-height: 40px;
+  min-height: 44px;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px 10px;
+  border-radius: 12px;
+  padding: 10px 12px;
   background: #fff;
   resize: vertical;
 }
 .chk {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   accent-color: var(--red);
   cursor: pointer;
 }
@@ -291,22 +324,28 @@ main {
 }
 .day-chip {
   flex: 0 0 auto;
-  min-width: 64px;
+  min-width: 68px;
   min-height: var(--tap);
-  padding: 8px 10px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
   background: #fff;
   cursor: pointer;
   text-align: center;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
-.day-chip .d { display: block; font-size: 1rem; font-weight: 800; color: var(--red); }
+.day-chip:nth-child(5n+1) { background: var(--day-1); }
+.day-chip:nth-child(5n+2) { background: var(--day-2); }
+.day-chip:nth-child(5n+3) { background: var(--day-3); }
+.day-chip:nth-child(5n+4) { background: var(--day-4); }
+.day-chip:nth-child(5n+5) { background: var(--day-5); }
+.day-chip .d { display: block; font-size: 1.1rem; font-weight: 800; color: var(--red); }
 .day-chip[aria-selected="true"] {
   background: var(--red);
   color: #fff;
   border-color: var(--red-deep);
+  box-shadow: 0 3px 10px rgba(185, 28, 28, 0.25);
 }
 .day-chip[aria-selected="true"] .d { color: var(--gold-soft); }
 
@@ -318,10 +357,11 @@ main {
 .search-row input {
   flex: 1;
   min-height: var(--tap);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 0 14px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 0 16px;
   background: #fff;
+  font-size: 1rem;
 }
 .cat-tabs {
   display: flex;
@@ -332,13 +372,13 @@ main {
 }
 .cat-chip {
   flex: 0 0 auto;
-  min-height: 36px;
-  padding: 6px 12px;
+  min-height: 40px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: #fff;
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -350,11 +390,11 @@ main {
 
 .phrase-grid {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 .phrase-card {
   perspective: 800px;
-  min-height: 120px;
+  min-height: 140px;
   cursor: pointer;
   border: none;
   padding: 0;
@@ -365,7 +405,7 @@ main {
 .phrase-inner {
   position: relative;
   width: 100%;
-  min-height: 120px;
+  min-height: 140px;
   transition: transform 0.45s;
   transform-style: preserve-3d;
 }
@@ -376,37 +416,55 @@ main {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   background: var(--card);
   box-shadow: var(--shadow);
-  padding: 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.phrase-face.front {
+  background: linear-gradient(165deg, #fff 0%, #fff7ed 100%);
+  border-color: var(--gold-soft);
+}
 .phrase-face.back {
   transform: rotateY(180deg);
-  background: linear-gradient(160deg, #fff7ed, #fff);
+  background: linear-gradient(160deg, #fef2f2, #fff);
+  border-color: #fecaca;
+}
+.phrase-try {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 4px;
 }
 .phrase-ja {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.45rem;
+  font-weight: 800;
   line-height: 1.3;
 }
 .phrase-romaji {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--ink-soft);
   margin-top: 4px;
+  font-weight: 600;
 }
 .phrase-en {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--red-deep);
 }
 .phrase-hint {
-  margin-top: 8px;
-  font-size: 0.72rem;
-  color: var(--ink-soft);
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red);
+  background: #fef3c7;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  align-self: flex-start;
 }
 .phrase-tools {
   display: flex;
@@ -415,7 +473,7 @@ main {
 }
 
 .stay-card h3 { margin-bottom: 4px; }
-.kv { font-size: 0.88rem; margin: 4px 0; }
+.kv { font-size: 0.95rem; margin: 4px 0; }
 .kv span { color: var(--ink-soft); }
 
 .app-footer {
@@ -423,7 +481,7 @@ main {
   margin: 8px auto 0;
   padding: 8px 16px 20px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--ink-soft);
 }
 
@@ -439,8 +497,9 @@ main {
 }
 
 @media (min-width: 640px) {
-  .app-header h1 { font-size: 1.35rem; }
+  .app-header h1 { font-size: 1.4rem; }
   .phrase-grid { grid-template-columns: 1fr 1fr; }
+  .countdown .big { font-size: 3.6rem; }
 }
 
   </style>
@@ -448,9 +507,9 @@ main {
 <body>
   <header class="app-header">
     <h1>Circus Vargas Goes to Japan</h1>
-    <p class="tagline">Oct 9–18, 2026 · family trip companion</p>
+    <p class="tagline">🎪 Family adventure · Oct 9–18, 2026 · 🇯🇵</p>
     <div class="header-actions">
-      <a id="doc-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Edit shared itinerary</a>
+      <a id="doc-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Edit Doc</a>
     </div>
   </header>
 
@@ -460,10 +519,10 @@ main {
 
   <main>
     <section id="panel-today" class="panel active" aria-label="Today"></section>
-    <section id="panel-itinerary" class="panel" aria-label="Itinerary"></section>
-    <section id="panel-phrases" class="panel" aria-label="Phrases"></section>
-    <section id="panel-stays" class="panel" aria-label="Stays and trains"></section>
-    <section id="panel-party" class="panel" aria-label="Party notes"></section>
+    <section id="panel-itinerary" class="panel" aria-label="All the days"></section>
+    <section id="panel-phrases" class="panel" aria-label="Say it"></section>
+    <section id="panel-stays" class="panel" aria-label="Hotels and trains"></section>
+    <section id="panel-party" class="panel" aria-label="Crew"></section>
   </main>
 
   <footer class="app-footer">
@@ -473,10 +532,10 @@ main {
 
   <nav class="nav-tabs" aria-label="Primary">
     <button type="button" data-panel="today" aria-selected="true"><span class="ico" aria-hidden="true">📅</span>Today</button>
-    <button type="button" data-panel="itinerary" aria-selected="false"><span class="ico" aria-hidden="true">🗺️</span>Itinerary</button>
-    <button type="button" data-panel="phrases" aria-selected="false"><span class="ico" aria-hidden="true">💬</span>Phrases</button>
-    <button type="button" data-panel="stays" aria-selected="false"><span class="ico" aria-hidden="true">🏨</span>Stays</button>
-    <button type="button" data-panel="party" aria-selected="false"><span class="ico" aria-hidden="true">🎪</span>Party</button>
+    <button type="button" data-panel="itinerary" aria-selected="false"><span class="ico" aria-hidden="true">🗺️</span>Days</button>
+    <button type="button" data-panel="phrases" aria-selected="false"><span class="ico" aria-hidden="true">💬</span>Say it!</button>
+    <button type="button" data-panel="stays" aria-selected="false"><span class="ico" aria-hidden="true">🏨</span>Hotels</button>
+    <button type="button" data-panel="party" aria-selected="false"><span class="ico" aria-hidden="true">🎪</span>Crew</button>
   </nav>
 
   <script>
@@ -1701,9 +1760,9 @@ window.TRIP_DATA = {
       <article class="item${doneClass}" data-day="${escapeHtml(day.id)}" data-item="${escapeHtml(item.id)}">
         <div class="item-top">
           <div class="item-checks">
-            <label title="Done / visited">
-              <span class="sr-only">Done / visited</span>
-              <input class="chk js-done" type="checkbox" ${st.done ? 'checked' : ''} aria-label="Mark done">
+            <label title="Done!">
+              <span class="sr-only">Mark done</span>
+              <input class="chk js-done" type="checkbox" ${st.done ? 'checked' : ''} aria-label="Mark done!">
             </label>
             <button type="button" class="btn-icon js-star" aria-label="Favorite" aria-pressed="${st.star ? 'true' : 'false'}">${st.star ? '★' : '☆'}</button>
           </div>
@@ -1716,7 +1775,7 @@ window.TRIP_DATA = {
               ${item.link ? `<a class="btn btn-sm btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Link</a>` : ''}
             </div>
             <label class="sr-only" for="note-${escapeHtml(item.id)}">Personal note</label>
-            <textarea id="note-${escapeHtml(item.id)}" class="item-note js-note" placeholder="Personal note (this phone only)…" rows="1">${escapeHtml(st.note)}</textarea>
+            <textarea id="note-${escapeHtml(item.id)}" class="item-note js-note" placeholder="Your note (this phone only)…" rows="1">${escapeHtml(st.note)}</textarea>
           </div>
         </div>
       </article>`;
@@ -1750,13 +1809,14 @@ window.TRIP_DATA = {
       const n = daysUntilTrip(today);
       el.innerHTML = `
         <div class="card countdown">
-          <p class="muted">Tokyo time · trip starts Oct 9, 2026</p>
+          <p class="muted">Tokyo time · we leave Oct 9, 2026</p>
           <div class="big">${n}</div>
-          <p><strong>day${n === 1 ? '' : 's'} until Circus Vargas lands in Japan</strong></p>
-          <p class="muted">Party: ${escapeHtml(DATA.meta.partySize)}</p>
+          <p class="countdown-label">${n === 1 ? 'day' : 'days'} until Japan!</p>
+          <p><strong>🎪 Circus Vargas adventure countdown</strong></p>
+          <p class="muted">Crew: ${escapeHtml(DATA.meta.partySize)}</p>
         </div>
         ${renderDayCard(DATA.days[0], { id: 'preview-first' })}
-        <p class="muted" style="text-align:center">Showing arrival day preview. Switch to Itinerary for the full plan.</p>`;
+        <p class="muted" style="text-align:center">Peek at arrival day. Tap <strong>Days</strong> for the whole plan.</p>`;
       wireItemControls(el);
       return;
     }
@@ -1765,15 +1825,16 @@ window.TRIP_DATA = {
       el.innerHTML = `
         <div class="card countdown">
           <div class="big">🎪</div>
-          <p><strong>Trip complete — thanks for the memories!</strong></p>
-          <p class="muted">Oct 9–18, 2026 · browse Itinerary anytime.</p>
+          <p class="countdown-label">Adventure complete!</p>
+          <p><strong>Thanks for the memories!</strong></p>
+          <p class="muted">Oct 9–18, 2026 · peek at Days anytime.</p>
         </div>`;
       return;
     }
 
     if (day) {
       el.innerHTML = `
-        <p class="muted" style="margin:0 0 8px">Today in Tokyo time · ${escapeHtml(today)}</p>
+        <p class="muted" style="margin:0 0 8px">Today (Tokyo time) · ${escapeHtml(today)}</p>
         ${renderDayCard(day)}`;
       wireItemControls(el);
     } else {
@@ -1805,7 +1866,7 @@ window.TRIP_DATA = {
       .join('');
     const day = findDay(selectedItinDate) || DATA.days[0];
     el.innerHTML = `
-      <div class="day-picker" role="tablist" aria-label="Trip days">${chips}</div>
+      <div class="day-picker" role="tablist" aria-label="All the days">${chips}</div>
       ${renderDayCard(day)}`;
     el.querySelectorAll('.js-day-chip').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -1876,14 +1937,16 @@ window.TRIP_DATA = {
       <button type="button" class="phrase-card js-phrase" data-copy="${escapeHtml(p.ja || p.romaji)}" aria-label="Flip phrase: ${escapeHtml(p.romaji)}">
         <div class="phrase-inner">
           <div class="phrase-face front">
+            <div class="phrase-try">Try saying…</div>
             <div class="phrase-ja">${escapeHtml(p.ja || p.romaji)}</div>
             <div class="phrase-romaji">${escapeHtml(p.romaji)}</div>
-            <div class="phrase-hint">Tap to reveal English</div>
+            <div class="phrase-hint">👆 Tap to flip!</div>
           </div>
           <div class="phrase-face back">
+            <div class="phrase-try">You said it!</div>
             <div class="phrase-en">${escapeHtml(p.en)}</div>
             <div class="phrase-romaji">${escapeHtml(p.romaji)}</div>
-            <div class="phrase-ja" style="font-size:1rem;margin-top:6px">${escapeHtml(p.ja || '')}</div>
+            <div class="phrase-ja" style="font-size:1.1rem;margin-top:6px">${escapeHtml(p.ja || '')}</div>
           </div>
         </div>
       </button>
@@ -1896,15 +1959,15 @@ window.TRIP_DATA = {
 
     el.innerHTML = `
       <div class="card">
-        <h2>Pronunciation tip</h2>
-        <p class="muted">${escapeHtml(DATA.phrases.pronunciationTip)}</p>
+        <h2>Say it like a pro 🎤</h2>
+        <p>${escapeHtml(DATA.phrases.pronunciationTip)}</p>
       </div>
       <div class="search-row">
         <label class="sr-only" for="phrase-search">Search phrases</label>
-        <input id="phrase-search" type="search" placeholder="Search Japanese, romaji, English…" value="${escapeHtml(phraseQuery)}" autocomplete="off">
+        <input id="phrase-search" type="search" placeholder="Find a phrase…" value="${escapeHtml(phraseQuery)}" autocomplete="off">
       </div>
       <div class="cat-tabs" role="tablist">${chips}</div>
-      <div class="phrase-grid">${cards || '<p class="muted">No matches.</p>'}</div>`;
+      <div class="phrase-grid">${cards || '<p class="muted">No matches — try another word!</p>'}</div>`;
 
     el.querySelector('#phrase-search').addEventListener('input', (e) => {
       phraseQuery = e.target.value;
@@ -1978,10 +2041,10 @@ window.TRIP_DATA = {
       .join('');
 
     el.innerHTML = `
-      <h2 class="sr-only">Stays & trains</h2>
-      <p class="muted" style="margin-top:0">Hotels are authoritative booked facts. Shinkansen Green Car seats are planned — not ticketed yet.</p>
+      <h2 class="sr-only">Hotels & trains</h2>
+      <p style="margin-top:0">Hotels below are the real booked ones. Big train seats are planned — tickets still to buy.</p>
       ${stays}
-      <h2 style="font-size:1.1rem;margin:18px 0 8px">Trains</h2>
+      <h2 style="font-size:1.15rem;margin:18px 0 8px">🚂 Trains</h2>
       ${trains}`;
   }
 
@@ -1998,21 +2061,21 @@ window.TRIP_DATA = {
       .join('');
     el.innerHTML = `
       <div class="card">
-        <h2>The circus troupe</h2>
+        <h2>🎪 The circus crew</h2>
         <p>${escapeHtml(DATA.party.party)}</p>
       </div>
       <div class="card">
-        <h2>Party notes</h2>
+        <h2>Crew notes</h2>
         <ul>${notes}</ul>
       </div>
       <div class="card">
-        <h2>Priorities</h2>
+        <h2>Wish list</h2>
         <ul>${pri}</ul>
       </div>
       <div class="card">
         <h2>Useful links</h2>
         <div class="item-actions" style="flex-direction:column;align-items:stretch">
-          <a class="btn btn-primary" href="${escapeHtml(DATA.meta.docUrl)}" target="_blank" rel="noopener noreferrer">Edit shared itinerary (Google Doc)</a>
+          <a class="btn btn-primary" href="${escapeHtml(DATA.meta.docUrl)}" target="_blank" rel="noopener noreferrer">Edit Doc (shared plan)</a>
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.kansaiPassVideo)}" target="_blank" rel="noopener noreferrer">Kansai Wide Area Pass video</a>
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo1)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 1</a>
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo2)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 2</a>
