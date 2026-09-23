@@ -502,6 +502,64 @@ main {
   .countdown .big { font-size: 3.6rem; }
 }
 
+
+/* Location photo thumbs → open Google Maps */
+.place-photo {
+  position: relative;
+  display: block;
+  margin: 8px 0 6px;
+  width: min(100%, 280px);
+  max-width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #e8d9c0;
+  aspect-ratio: 4 / 3;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.place-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+.place-photo-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(127, 29, 29, 0.92);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  pointer-events: none;
+}
+.place-photo:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+.place-photo:active {
+  transform: scale(0.98);
+}
+.stay-card .place-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 10;
+  margin: 10px 0 12px;
+}
+@media (max-width: 420px) {
+  .place-photo {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 10;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1657,6 +1715,344 @@ window.TRIP_DATA = {
         "what": "Birthday day Oct 16 — Shinjuku/Shibuya celebration"
       }
     ]
+  },
+  "photos": {
+    "Haneda Airport Terminal 3": {
+      "file": "images/haneda-airport-terminal-3.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Haneda Airport",
+      "pageTitle": "Haneda Airport",
+      "pageUrl": "https://en.wikipedia.org/wiki/Haneda_Airport"
+    },
+    "Villa Fontaine Premier Haneda Airport Terminal 3": {
+      "file": "images/villa-fontaine-premier-haneda-airport-terminal-3.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Haneda Airport",
+      "pageTitle": "Haneda Airport",
+      "pageUrl": "https://en.wikipedia.org/wiki/Haneda_Airport"
+    },
+    "Shinagawa Station Tokyo": {
+      "file": "images/shinagawa-station-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shinagawa Station",
+      "pageTitle": "Shinagawa Station",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shinagawa_Station"
+    },
+    "Kyoto Station": {
+      "file": "images/kyoto-station.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kyōto Station",
+      "pageTitle": "Kyōto Station",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station"
+    },
+    "Hotel Kyoto Shijo Kawaramachi": {
+      "file": "images/hotel-kyoto-shijo-kawaramachi.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kawaramachi Avenue",
+      "pageTitle": "Kawaramachi Avenue",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kawaramachi_Avenue"
+    },
+    "Nishiki Market Kyoto": {
+      "file": "images/nishiki-market-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Nishiki Market",
+      "pageTitle": "Nishiki Market",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nishiki_Market"
+    },
+    "Daishodo Woodblock Print Shop Kyoto": {
+      "file": "images/daishodo-woodblock-print-shop-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Nishiki Market",
+      "pageTitle": "Nishiki Market",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nishiki_Market"
+    },
+    "Yamatake Senpo Kyoto": {
+      "file": "images/yamatake-senpo-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Nishiki Market",
+      "pageTitle": "Nishiki Market",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nishiki_Market"
+    },
+    "Pontocho Alley Kyoto": {
+      "file": "images/pontocho-alley-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Ponto-chō",
+      "pageTitle": "Ponto-chō",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ponto-ch%C5%8D"
+    },
+    "Gion Kyoto": {
+      "file": "images/gion-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Gion",
+      "pageTitle": "Gion",
+      "pageUrl": "https://en.wikipedia.org/wiki/Gion"
+    },
+    "Maruyama Park Kyoto": {
+      "file": "images/maruyama-park-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Yasaka Shrine",
+      "pageTitle": "Yasaka Shrine",
+      "pageUrl": "https://en.wikipedia.org/wiki/Yasaka_Shrine"
+    },
+    "Yasaka Pagoda Kyoto": {
+      "file": "images/yasaka-pagoda-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Yasaka Pagoda",
+      "pageTitle": "Yasaka Pagoda",
+      "pageUrl": "https://en.wikipedia.org/wiki/Yasaka_Pagoda"
+    },
+    "Hatsune Antiques Kyoto": {
+      "file": "images/hatsune-antiques-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Sannenzaka",
+      "pageTitle": "Sannenzaka",
+      "pageUrl": "https://en.wikipedia.org/wiki/Sannenzaka"
+    },
+    "Kiyomizu-dera Kyoto": {
+      "file": "images/kiyomizu-dera-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kiyomizu-dera",
+      "pageTitle": "Kiyomizu-dera",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kiyomizu-dera"
+    },
+    "Yogen-in Temple Kyoto": {
+      "file": "images/yogen-in-temple-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Tōfuku-ji",
+      "pageTitle": "Tōfuku-ji",
+      "pageUrl": "https://en.wikipedia.org/wiki/T%C5%8Dfuku-ji"
+    },
+    "Kamo River Kyoto": {
+      "file": "images/kamo-river-kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kamo River",
+      "pageTitle": "Kamo River",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kamo_River"
+    },
+    "Kyoto": {
+      "file": "images/kyoto.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kyoto",
+      "pageTitle": "Kyoto",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kyoto"
+    },
+    "Amanohashidate Station": {
+      "file": "images/amanohashidate-station.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Amanohashidate",
+      "pageTitle": "Amanohashidate",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amanohashidate"
+    },
+    "Seafood Atelier Hashidate Produce": {
+      "file": "images/seafood-atelier-hashidate-produce.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Amanohashidate",
+      "pageTitle": "Amanohashidate",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amanohashidate"
+    },
+    "Amanohashidate Viewland": {
+      "file": "images/amanohashidate-viewland.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Amanohashidate",
+      "pageTitle": "Amanohashidate",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amanohashidate"
+    },
+    "Amanohashidate sandbar": {
+      "file": "images/amanohashidate-sandbar.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Amanohashidate",
+      "pageTitle": "Amanohashidate",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amanohashidate"
+    },
+    "Amanohashidate seafood": {
+      "file": "images/amanohashidate-seafood.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Amanohashidate",
+      "pageTitle": "Amanohashidate",
+      "pageUrl": "https://en.wikipedia.org/wiki/Amanohashidate"
+    },
+    "Nachi Falls": {
+      "file": "images/nachi-falls.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Nachi Falls",
+      "pageTitle": "Nachi Falls",
+      "pageUrl": "https://en.wikipedia.org/wiki/Nachi_Falls"
+    },
+    "Tokyo Station": {
+      "file": "images/tokyo-station.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Tokyo Station",
+      "pageTitle": "Tokyo Station",
+      "pageUrl": "https://en.wikipedia.org/wiki/Tokyo_Station"
+    },
+    "Koko Hotel Ginza 1-chome": {
+      "file": "images/koko-hotel-ginza-1-chome.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Ginza",
+      "pageTitle": "Ginza",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ginza"
+    },
+    "Akihabara Tokyo": {
+      "file": "images/akihabara-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Akihabara",
+      "pageTitle": "Akihabara",
+      "pageUrl": "https://en.wikipedia.org/wiki/Akihabara"
+    },
+    "Kappabashi Tokyo": {
+      "file": "images/kappabashi-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kappabashi-dori",
+      "pageTitle": "Kappabashi-dori",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kappabashi-dori"
+    },
+    "Seive Matcha Tokyo": {
+      "file": "images/seive-matcha-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Matcha",
+      "pageTitle": "Matcha",
+      "pageUrl": "https://en.wikipedia.org/wiki/Matcha"
+    },
+    "Kagetsudo Melon Bread Asakusa": {
+      "file": "images/kagetsudo-melon-bread-asakusa.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Asakusa",
+      "pageTitle": "Asakusa",
+      "pageUrl": "https://en.wikipedia.org/wiki/Asakusa"
+    },
+    "Zaku Knives Tokyo": {
+      "file": "images/zaku-knives-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kappabashi-dori",
+      "pageTitle": "Kappabashi-dori",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kappabashi-dori"
+    },
+    "Kimono Reborn Tokyo": {
+      "file": "images/kimono-reborn-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Kimono",
+      "pageTitle": "Kimono",
+      "pageUrl": "https://en.wikipedia.org/wiki/Kimono"
+    },
+    "Tokyo Origami Museum": {
+      "file": "images/tokyo-origami-museum.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Origami",
+      "pageTitle": "Origami",
+      "pageUrl": "https://en.wikipedia.org/wiki/Origami"
+    },
+    "Tokyo Skytree": {
+      "file": "images/tokyo-skytree.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Tokyo Skytree",
+      "pageTitle": "Tokyo Skytree",
+      "pageUrl": "https://en.wikipedia.org/wiki/Tokyo_Skytree"
+    },
+    "Parazzo San Gusto Tokyo": {
+      "file": "images/parazzo-san-gusto-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Ginza",
+      "pageTitle": "Ginza",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ginza"
+    },
+    "Imperial Palace Tokyo": {
+      "file": "images/imperial-palace-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Tokyo Imperial Palace",
+      "pageTitle": "Tokyo Imperial Palace",
+      "pageUrl": "https://en.wikipedia.org/wiki/Tokyo_Imperial_Palace"
+    },
+    "Samurai Museum Shinjuku": {
+      "file": "images/samurai-museum-shinjuku.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shinjuku",
+      "pageTitle": "Shinjuku",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shinjuku"
+    },
+    "Godzilla Head Shinjuku": {
+      "file": "images/godzilla-head-shinjuku.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Godzilla Street",
+      "pageTitle": "Godzilla Street",
+      "pageUrl": "https://en.wikipedia.org/wiki/Godzilla_Street"
+    },
+    "Tokyo Used Camera": {
+      "file": "images/tokyo-used-camera.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shinjuku",
+      "pageTitle": "Shinjuku",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shinjuku"
+    },
+    "Tacos 3 Hermanos Tokyo": {
+      "file": "images/tacos-3-hermanos-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shinjuku",
+      "pageTitle": "Shinjuku",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shinjuku"
+    },
+    "Iyoshi Cola Tokyo": {
+      "file": "images/iyoshi-cola-tokyo.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shinjuku",
+      "pageTitle": "Shinjuku",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shinjuku"
+    },
+    "Don Quijote Mega Shinjuku": {
+      "file": "images/don-quijote-mega-shinjuku.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Don Quijote (store)",
+      "pageTitle": "Don Quijote (store)",
+      "pageUrl": "https://en.wikipedia.org/wiki/Don_Quijote_(store)"
+    },
+    "Shojin Tokyo ramen": {
+      "file": "images/shojin-tokyo-ramen.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Ramen",
+      "pageTitle": "Ramen",
+      "pageUrl": "https://en.wikipedia.org/wiki/Ramen"
+    },
+    "Shibuya Hikarie Sky Lobby": {
+      "file": "images/shibuya-hikarie-sky-lobby.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Shibuya Hikarie",
+      "pageTitle": "Shibuya Hikarie",
+      "pageUrl": "https://en.wikipedia.org/wiki/Shibuya_Hikarie"
+    },
+    "Enoshima Station Shonan Monorail": {
+      "file": "images/enoshima-station-shonan-monorail.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Enoshima",
+      "pageTitle": "Enoshima",
+      "pageUrl": "https://en.wikipedia.org/wiki/Enoshima"
+    },
+    "Enoshima Iwaya Cave": {
+      "file": "images/enoshima-iwaya-cave.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Enoshima",
+      "pageTitle": "Enoshima",
+      "pageUrl": "https://en.wikipedia.org/wiki/Enoshima"
+    },
+    "Enoshima Electric Railway": {
+      "file": "images/enoshima-electric-railway.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Enoshima Electric Railway",
+      "pageTitle": "Enoshima Electric Railway",
+      "pageUrl": "https://en.wikipedia.org/wiki/Enoshima_Electric_Railway"
+    },
+    "Sasuke Inari Shrine Kamakura": {
+      "file": "images/sasuke-inari-shrine-kamakura.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Sasuke Inari Shrine",
+      "pageTitle": "Sasuke Inari Shrine",
+      "pageUrl": "https://en.wikipedia.org/wiki/Sasuke_Inari_Shrine"
+    },
+    "Haneda Airport": {
+      "file": "images/haneda-airport.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Haneda Airport",
+      "pageTitle": "Haneda Airport",
+      "pageUrl": "https://en.wikipedia.org/wiki/Haneda_Airport"
+    }
   }
 };
 
@@ -1705,6 +2101,25 @@ window.TRIP_DATA = {
   function searchLink(query) {
     if (!query) return null;
     return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  }
+
+  /** Look up photo by mapsQuery (central data/photos.json — survives Doc sync). */
+  function photoFor(mapsQuery) {
+    if (!mapsQuery || !DATA.photos) return null;
+    return DATA.photos[mapsQuery] || null;
+  }
+
+  function renderPlacePhoto(mapsQuery, mapsUrl, altTitle) {
+    const photo = photoFor(mapsQuery);
+    const map = mapsLink(mapsQuery, mapsUrl);
+    if (!photo || !photo.file || !map) return '';
+    const credit = photo.credit ? ` · ${photo.credit}` : '';
+    return `
+      <a class="place-photo" href="${escapeHtml(map)}" target="_blank" rel="noopener noreferrer"
+         title="Open in Google Maps${escapeHtml(credit)}">
+        <img src="${escapeHtml(photo.file)}" alt="${escapeHtml(altTitle || mapsQuery)}" loading="lazy" width="120" height="90" />
+        <span class="place-photo-badge" aria-hidden="true">📍 Maps</span>
+      </a>`;
   }
 
   function tokyoYmd(d = new Date()) {
@@ -1756,6 +2171,7 @@ window.TRIP_DATA = {
     const map = mapsLink(item.mapsQuery, item.mapsUrl);
     const search = searchLink(item.mapsQuery || item.title);
     const doneClass = st.done ? ' done' : '';
+    const photoHtml = renderPlacePhoto(item.mapsQuery, item.mapsUrl, item.title);
     return `
       <article class="item${doneClass}" data-day="${escapeHtml(day.id)}" data-item="${escapeHtml(item.id)}">
         <div class="item-top">
@@ -1768,6 +2184,7 @@ window.TRIP_DATA = {
           </div>
           <div class="item-body">
             <div class="item-title">${escapeHtml(item.title)} ${statusPill(item.status)}</div>
+            ${photoHtml}
             ${item.detail ? `<div class="item-detail">${linkify(item.detail)}</div>` : ''}
             <div class="item-actions">
               ${map ? `<a class="btn btn-sm btn-ghost" style="background:#fef2f2;color:var(--red-deep);border:1px solid var(--border)" href="${escapeHtml(map)}" target="_blank" rel="noopener noreferrer">Maps</a>` : ''}
@@ -2009,9 +2426,11 @@ window.TRIP_DATA = {
     const stays = DATA.stays
       .map((s) => {
         const map = mapsLink(s.mapsQuery, s.mapsUrl);
+        const photoHtml = renderPlacePhoto(s.mapsQuery, s.mapsUrl, s.name);
         return `
         <article class="card stay-card">
           <h3>${escapeHtml(s.name)} ${statusPill(s.status)}</h3>
+          ${photoHtml}
           <p class="muted">${escapeHtml(s.area)} · ${escapeHtml(s.nights)}</p>
           <p class="kv"><span>Check-in:</span> ${escapeHtml(s.checkIn)}</p>
           <p class="kv"><span>Checkout:</span> ${escapeHtml(s.checkOut)}</p>
