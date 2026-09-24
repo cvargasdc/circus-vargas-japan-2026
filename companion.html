@@ -635,7 +635,7 @@ window.TRIP_DATA = {
   "meta": {
     "title": "Circus Vargas Goes to Japan",
     "docUrl": "https://docs.google.com/document/d/1t0yKSCdpAXDrOtdceFMqJ7ZXoe6zh-OmAR-z8jigMEA/edit",
-    "lastSynced": "2026-09-23 18:18 PT",
+    "lastSynced": "2026-09-23 22:42 PT",
     "partySize": "Chris, Adana, Amaya, Ellie, Robert, Sandra, Alyssa, Pete (8)",
     "timezone": "Asia/Tokyo",
     "tripStart": "2026-10-09",
@@ -665,7 +665,7 @@ window.TRIP_DATA = {
           "id": "d9-hotel",
           "type": "stay",
           "title": "Villa Fontaine Premier Haneda Airport",
-          "detail": "Night of Oct 9. 3 rooms with hot spring access. Booked.",
+          "detail": "Night of Oct 9. 3 rooms, all with hot spring access: 1 Executive Twin (family of 4), 1 Deluxe Twin (Peter Fox), and 1 Deluxe Twin (Sandra & Robert Vargas). Booked.",
           "status": "Booked",
           "mapsQuery": "Villa Fontaine Premier Haneda Airport Terminal 3",
           "mapsUrl": null
@@ -1252,7 +1252,7 @@ window.TRIP_DATA = {
       "status": "Booked",
       "mapsQuery": "Villa Fontaine Premier Haneda Airport Terminal 3",
       "mapsUrl": null,
-      "notes": "3 rooms with hot spring access. Connected to Terminal 3. Leave mid-morning for Tokyo Station / Nozomi 41."
+      "notes": "3 rooms, all with hot spring access: 1 Executive Twin (Christopher Vargas, family of 4), 1 Deluxe Twin (Peter Fox), and 1 Deluxe Twin (Sandra & Robert Vargas). Connected to Terminal 3. Leave mid-morning for Tokyo Station / Nozomi 41."
     },
     {
       "id": "stay-kyoto",
@@ -1645,6 +1645,18 @@ window.TRIP_DATA = {
             "ja": "荷物を預けてもいいですか",
             "romaji": "nimotsu o azukete mo ii desu ka",
             "en": "May I leave my luggage?"
+          },
+          {
+            "id": "p-eigo",
+            "ja": "英語は分かりますか？",
+            "romaji": "Eigo wa wakarimasu ka?",
+            "en": "Do you understand English?"
+          },
+          {
+            "id": "p-yoku-wakarimasen",
+            "ja": "よく分かりません",
+            "romaji": "Yoku wakarimasen",
+            "en": "I don't understand well"
           }
         ]
       },
@@ -1710,7 +1722,9 @@ window.TRIP_DATA = {
     "amanohashidateVideo1": "https://www.youtube.com/watch?v=A2iWvYmhFa8",
     "amanohashidateVideo2": "https://www.youtube.com/watch?v=kbtQYPlAh-A",
     "zakuKnives": "https://zakuknives.com/",
-    "nishikiMaps": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9"
+    "nishikiMaps": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9",
+    "washletGuide": "https://cotoacademy.com/guide-japanese-toilets-japanese-toilet-buttons-infographic/",
+    "washletVideo": "https://youtu.be/QabwDks5ETA"
   },
   "party": {
     "party": "Chris, Adana, Amaya, Ellie, Robert, Sandra, Alyssa, and Pete — 8 people (6 adults, Amaya ~10, Ellie ~23 months on the trip).",
@@ -1729,7 +1743,7 @@ window.TRIP_DATA = {
       "This phone app stores done/visited, stars, and personal notes in localStorage only (per device).",
       "Flights: Land Haneda ~9pm Oct 9; home Haneda ~9pm Oct 18 → LAX 3:10pm.",
       "Prefer jumbo van Haneda→Shinagawa morning of Oct 10 (not Keikyu with 8 + bags).",
-      "Shinkansen: Green Car, 8 reserved seats — SmartEX not purchased yet.",
+      "Shinkansen: outbound Nozomi 41 is fully booked (8 Green Car seats); return Nozomi 20 has 6 of 8 Green Car seats booked — 2 adults still need tickets.",
       "A&P side quests: Nachi Falls (Oct 13), Samurai Museum (Oct 16), Yasaka Pagoda & Yogen-in (Oct 10).",
       "Mom's birthday Oct 16 — celebrate in Shinjuku/Shibuya!",
       "No passport numbers or payment cards in this public site."
@@ -2502,7 +2516,7 @@ window.TRIP_DATA = {
 
     el.innerHTML = `
       <h2 class="sr-only">Hotels & trains</h2>
-      <p style="margin-top:0">Hotels below are the real booked ones. Big train seats are planned — tickets still to buy.</p>
+      <p style="margin-top:0">Hotels below are the real booked ones. Train status is shown below; two return seats still need tickets.</p>
       ${stays}
       <h2 style="font-size:1.15rem;margin:18px 0 8px">🚂 Trains</h2>
       ${trains}`;
@@ -2544,6 +2558,8 @@ window.TRIP_DATA = {
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo1)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 1</a>
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.amanohashidateVideo2)}" target="_blank" rel="noopener noreferrer">Amanohashidate video 2</a>
           <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.zakuKnives)}" target="_blank" rel="noopener noreferrer">Zaku Knives</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.washletGuide)}" target="_blank" rel="noopener noreferrer">Japanese toilet buttons guide</a>
+          <a class="btn btn-ghost" style="background:#fff;color:var(--ink);border:1px solid var(--border)" href="${escapeHtml(DATA.links.washletVideo)}" target="_blank" rel="noopener noreferrer">Japanese toilet buttons video</a>
         </div>
       </div>`;
   }
