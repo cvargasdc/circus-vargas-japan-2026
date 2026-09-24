@@ -1,0 +1,617 @@
+[
+  {
+    "id": "day-2026-10-09",
+    "date": "2026-10-09",
+    "weekday": "Friday",
+    "title": "Arrive Tokyo — Haneda",
+    "city": "Tokyo (Haneda)",
+    "summary": "ANA NH125 lands Haneda ~9pm. Check in Villa Fontaine Premier (Terminal 3).",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d9-flight",
+        "type": "flight",
+        "title": "ANA NH125 — land Haneda ~9pm",
+        "detail": "Departs LAX Thu Oct 8 at 4:50pm (Terminal B) → arrives Haneda Fri Oct 9 at 9:00pm. Economy confirmed. E-ticket receipts are in email; mobile boarding passes come from ANA check-in (~24h before).",
+        "status": "Booked",
+        "mapsQuery": "Haneda Airport Terminal 3",
+        "mapsUrl": null
+      },
+      {
+        "id": "d9-hotel",
+        "type": "stay",
+        "title": "Villa Fontaine Premier Haneda Airport",
+        "detail": "Night of Oct 9. 3 rooms, all with hot spring access: 1 Executive Twin (family of 4), 1 Deluxe Twin (Peter Fox), and 1 Deluxe Twin (Sandra & Robert Vargas). Booked.",
+        "status": "Booked",
+        "mapsQuery": "Villa Fontaine Premier Haneda Airport Terminal 3",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-10",
+    "date": "2026-10-10",
+    "weekday": "Saturday",
+    "title": "Haneda → Kyoto · City walk",
+    "city": "Kyoto",
+    "summary": "Jumbo van toward Tokyo Station, Nozomi 41 (2:30pm) to Kyoto, check in Hotel Forza Shijo Kawaramachi, then evening city walk if energy allows.",
+    "callouts": [
+      "Shinkansen is booked for 2:30pm (Nozomi 41) — later than the old mid-morning plan. Hotel Forza matches the Doc.",
+      "Kansai Wide Area Pass recommended — watch: https://www.youtube.com/watch?v=Axqxa-FB73s"
+    ],
+    "items": [
+      {
+        "id": "d10-breakfast",
+        "type": "food",
+        "title": "Breakfast TBD",
+        "detail": "Before departure from Haneda area.",
+        "status": null,
+        "mapsQuery": null,
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-van",
+        "type": "transit",
+        "title": "Jumbo van Haneda → Shinagawa",
+        "detail": "Prefer van with 8 + bags (not Keikyu). Aim to be at Tokyo Station well before the 2:30pm Nozomi.",
+        "status": "Plan",
+        "mapsQuery": "Tokyo Station",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-shinkansen",
+        "type": "train",
+        "title": "Nozomi 41 — Green Car",
+        "detail": "Tokyo 14:30 → Kyoto 16:44. Green Car 8 · all 8 seats booked (SmartEX).",
+        "status": "Booked",
+        "mapsQuery": "Kyoto Station",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-hotel",
+        "type": "stay",
+        "title": "Hotel Forza Kyoto Shijo Kawaramachi",
+        "detail": "Check-in after ~5pm arrival. 3 rooms booked.",
+        "status": "Booked",
+        "mapsQuery": "Hotel Forza Kyoto Shijo Kawaramachi",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-nishiki",
+        "type": "place",
+        "title": "Nishiki Market",
+        "detail": "City walk from hotel area.",
+        "status": null,
+        "mapsQuery": "Nishiki Market Kyoto",
+        "mapsUrl": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9"
+      },
+      {
+        "id": "d10-daishodo",
+        "type": "place",
+        "title": "Daishodo Woodblock Print Shop",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Daishodo Woodblock Print Shop Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-yamatake",
+        "type": "place",
+        "title": "Yamatake Senpo fan shop",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Yamatake Senpo Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-pontocho",
+        "type": "place",
+        "title": "Pontocho Alley / Geisha area",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Pontocho Alley Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-gion",
+        "type": "place",
+        "title": "Shijo-kobashi → Gion",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Gion Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-maruyama",
+        "type": "place",
+        "title": "Maruyama Park / Chion-in / Yasaka / Kodai-ji",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Maruyama Park Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-hokanji",
+        "type": "place",
+        "title": "Hokanji (Yasaka Pagoda)",
+        "detail": "A&P must see.",
+        "status": null,
+        "mapsQuery": "Yasaka Pagoda Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-hatsune",
+        "type": "place",
+        "title": "Hatsune Antiques",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Hatsune Antiques Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-kiyomizu",
+        "type": "place",
+        "title": "Higashiyama / Kiyomizu-dera",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Kiyomizu-dera Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-yogenin",
+        "type": "place",
+        "title": "Yogen-in Temple (blood ceilings)",
+        "detail": "A&P must see.",
+        "status": null,
+        "mapsQuery": "Yogen-in Temple Kyoto",
+        "mapsUrl": null
+      },
+      {
+        "id": "d10-kamo",
+        "type": "place",
+        "title": "Back via Kamo River / Takase Canal",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Kamo River Kyoto",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-11",
+    "date": "2026-10-11",
+    "weekday": "Sunday",
+    "title": "Flexible Kyoto day",
+    "city": "Kyoto",
+    "summary": "Open / TBD in the Google Doc — fill in as the party decides.",
+    "callouts": [
+      "Flexible day — add plans in the shared Google Doc."
+    ],
+    "items": [
+      {
+        "id": "d11-tbd",
+        "type": "note",
+        "title": "Kyoto — open agenda",
+        "detail": "Temple day, shopping, or rest. Coordinate in the Doc.",
+        "status": null,
+        "mapsQuery": "Kyoto",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-12",
+    "date": "2026-10-12",
+    "weekday": "Monday",
+    "title": "Amanohashidate day trip",
+    "city": "Amanohashidate",
+    "summary": "JR Hashidate Limited Express (~2hr). Advance reservation. Snacks required — no food service.",
+    "callouts": [
+      "Videos: https://www.youtube.com/watch?v=A2iWvYmhFa8 and https://www.youtube.com/watch?v=kbtQYPlAh-A"
+    ],
+    "items": [
+      {
+        "id": "d12-train",
+        "type": "train",
+        "title": "JR Hashidate Limited Express",
+        "detail": "~2hr. ADVANCE RESERVATION. No food service — bring snacks. Return to Kyoto same day.",
+        "status": "Plan — reserve ahead",
+        "mapsQuery": "Amanohashidate Station",
+        "mapsUrl": null
+      },
+      {
+        "id": "d12-crab",
+        "type": "food",
+        "title": "Seafood Atelier Hashidate Produce crab bento",
+        "detail": "Alyssa priority.",
+        "status": null,
+        "mapsQuery": "Seafood Atelier Hashidate Produce",
+        "mapsUrl": null
+      },
+      {
+        "id": "d12-viewland",
+        "type": "place",
+        "title": "Viewland Park chairlift or funicular",
+        "detail": "Pete must: chairlift. Safer for Ellie: funicular.",
+        "status": null,
+        "mapsQuery": "Amanohashidate Viewland",
+        "mapsUrl": null
+      },
+      {
+        "id": "d12-sandbar",
+        "type": "place",
+        "title": "Bike / walk sandbar ~3km",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Amanohashidate sandbar",
+        "mapsUrl": null
+      },
+      {
+        "id": "d12-north-lift",
+        "type": "place",
+        "title": "Optional north-end chairlift",
+        "detail": "Opposite-angle harbor view at the north end of the sandbar.",
+        "status": null,
+        "mapsQuery": "Amanohashidate north viewpoint chairlift",
+        "mapsUrl": null
+      },
+      {
+        "id": "d12-dinner",
+        "type": "food",
+        "title": "Dinner seafood TBD",
+        "detail": "Then train back to Kyoto.",
+        "status": null,
+        "mapsQuery": "Amanohashidate seafood",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-13",
+    "date": "2026-10-13",
+    "weekday": "Tuesday",
+    "title": "A&P Nachi side quest · Kyoto TBD",
+    "city": "Nachikatsuura / Kyoto",
+    "summary": "A&P: Nachikatsuura / Nachi Falls mid/late morning. Rest of party TBD in Kyoto.",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d13-nachi",
+        "type": "place",
+        "title": "Nachikatsuura / Nachi Falls (A&P)",
+        "detail": "Mid/late morning. A&P reconnect evening Oct 14 after return.",
+        "status": null,
+        "mapsQuery": "Nachi Falls",
+        "mapsUrl": null
+      },
+      {
+        "id": "d13-kyoto",
+        "type": "note",
+        "title": "Rest of party — Kyoto TBD",
+        "detail": "Coordinate in the Google Doc.",
+        "status": null,
+        "mapsQuery": "Kyoto",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-14",
+    "date": "2026-10-14",
+    "weekday": "Wednesday",
+    "title": "Kyoto → Tokyo Ginza",
+    "city": "Tokyo (Ginza)",
+    "summary": "Checkout Forza 11am. Nozomi 20 Kyoto 13:01 → Tokyo 15:15. Check in Koko Hotel Ginza (3pm).",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d14-checkout",
+        "type": "stay",
+        "title": "Checkout Hotel Forza Kyoto Shijo Kawaramachi",
+        "detail": "Checkout 11am.",
+        "status": "Booked",
+        "mapsQuery": "Hotel Forza Kyoto Shijo Kawaramachi",
+        "mapsUrl": null
+      },
+      {
+        "id": "d14-shinkansen",
+        "type": "train",
+        "title": "Nozomi 20 — Green Car",
+        "detail": "Kyoto 13:01 → Tokyo 15:15. Green Car 8 · 6 seats booked so far (4 adults + 2 children). Two adults still need tickets.",
+        "status": "Booked (6 of 8)",
+        "mapsQuery": "Tokyo Station",
+        "mapsUrl": null
+      },
+      {
+        "id": "d14-hotel",
+        "type": "stay",
+        "title": "Koko Hotel Ginza 1-chome",
+        "detail": "Check-in 3pm. Booked (Ginza 1-9-5 area).",
+        "status": "Booked",
+        "mapsQuery": "Koko Hotel Ginza 1-chome",
+        "mapsUrl": null
+      },
+      {
+        "id": "d14-reconnect",
+        "type": "note",
+        "title": "A&P reconnect evening",
+        "detail": "After Nachi side quest.",
+        "status": null,
+        "mapsQuery": null,
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-15",
+    "date": "2026-10-15",
+    "weekday": "Thursday",
+    "title": "Akihabara · Asakusa · Skytree",
+    "city": "Tokyo",
+    "summary": "Akihabara / Taito / Asakusa / Skytree loop — games, food, knives, views.",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d15-akihabara",
+        "type": "place",
+        "title": "Akihabara — games / gachapon",
+        "detail": "Pete picks up items for Marco; also gachapon.",
+        "status": null,
+        "mapsQuery": "Akihabara Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-kappabashi",
+        "type": "place",
+        "title": "Kappabashi",
+        "detail": "Kitchen street.",
+        "status": null,
+        "mapsQuery": "Kappabashi Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-seive",
+        "type": "food",
+        "title": "Seive Matcha",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Seive Matcha Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-melon",
+        "type": "food",
+        "title": "Asakusa Kagetsudō Melon Bread",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Kagetsudo Melon Bread Asakusa",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-zaku",
+        "type": "place",
+        "title": "Zaku Knives",
+        "detail": "https://zakuknives.com/",
+        "status": null,
+        "mapsQuery": "Zaku Knives Tokyo",
+        "mapsUrl": null,
+        "link": "https://zakuknives.com/"
+      },
+      {
+        "id": "d15-kimono",
+        "type": "place",
+        "title": "Kimono Reborn Tokyo",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Kimono Reborn Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-origami",
+        "type": "place",
+        "title": "Tokyo Origami Museum?",
+        "detail": "Optional / confirm.",
+        "status": null,
+        "mapsQuery": "Tokyo Origami Museum",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-skytree",
+        "type": "place",
+        "title": "Skytree area",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Tokyo Skytree",
+        "mapsUrl": null
+      },
+      {
+        "id": "d15-pizza",
+        "type": "food",
+        "title": "Parazzo San Gusto pizza?",
+        "detail": "Optional.",
+        "status": null,
+        "mapsQuery": "Parazzo San Gusto Tokyo",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-16",
+    "date": "2026-10-16",
+    "weekday": "Friday",
+    "title": "Mom's birthday! Akasaka / Shinjuku / Shibuya",
+    "city": "Tokyo",
+    "summary": "Birthday day — Imperial Palace, Harry Potter shop, Samurai Museum, cameras, tacos, Donki, ramen, Shibuya night view.",
+    "callouts": [
+      "Happy birthday, Mom!"
+    ],
+    "items": [
+      {
+        "id": "d16-palace",
+        "type": "place",
+        "title": "Imperial Palace",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Imperial Palace Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-harry-potter",
+        "type": "place",
+        "title": "Harry Potter Shop",
+        "detail": "From the Doc — confirm which location before going.",
+        "status": null,
+        "mapsQuery": "Harry Potter Shop Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-samurai",
+        "type": "place",
+        "title": "Samurai Museum (A&P)",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Samurai Museum Shinjuku",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-godzilla",
+        "type": "place",
+        "title": "Godzilla Head",
+        "detail": "Shinjuku.",
+        "status": null,
+        "mapsQuery": "Godzilla Head Shinjuku",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-camera",
+        "type": "place",
+        "title": "Used Camera Box / Tokyo Used Camera",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Tokyo Used Camera",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-tacos",
+        "type": "food",
+        "title": "Tacos 3 Hermanos",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Tacos 3 Hermanos Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-cola",
+        "type": "food",
+        "title": "Iyoshi Cola",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Iyoshi Cola Tokyo",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-donki",
+        "type": "place",
+        "title": "Don Quijote Mega",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Don Quijote Mega Shinjuku",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-ramen",
+        "type": "food",
+        "title": "Ramen family dinner TBD",
+        "detail": "Maybe Shojin vegetarian ramen.",
+        "status": null,
+        "mapsQuery": "Shojin Tokyo ramen",
+        "mapsUrl": null
+      },
+      {
+        "id": "d16-shibuya",
+        "type": "place",
+        "title": "Shibuya Crossing / Hikarie Sky Lobby",
+        "detail": "Night view.",
+        "status": null,
+        "mapsQuery": "Shibuya Hikarie Sky Lobby",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-17",
+    "date": "2026-10-17",
+    "weekday": "Saturday",
+    "title": "Enoshima / Kamakura day trip",
+    "city": "Enoshima",
+    "summary": "Tokyo/Yurakucho → Ofuna → Shonan Monorail (~90min). Sea Candle, caves, optional Enoden.",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d17-transit",
+        "type": "transit",
+        "title": "Tokyo / Yurakucho → Ofuna → Shonan Monorail",
+        "detail": "~90 minutes to Enoshima.",
+        "status": "Plan",
+        "mapsQuery": "Enoshima Station Shonan Monorail",
+        "mapsUrl": null
+      },
+      {
+        "id": "d17-cave",
+        "type": "place",
+        "title": "Enoshima Iwaya Cave via Sea Candle",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Enoshima Iwaya Cave",
+        "mapsUrl": null
+      },
+      {
+        "id": "d17-enoden",
+        "type": "train",
+        "title": "Optional Enoshima Electric Railway",
+        "detail": null,
+        "status": null,
+        "mapsQuery": "Enoshima Electric Railway",
+        "mapsUrl": null
+      },
+      {
+        "id": "d17-sasuke",
+        "type": "place",
+        "title": "Sasuke Inari (fox shrine)",
+        "detail": "Try if time.",
+        "status": null,
+        "mapsQuery": "Sasuke Inari Shrine Kamakura",
+        "mapsUrl": null
+      }
+    ]
+  },
+  {
+    "id": "day-2026-10-18",
+    "date": "2026-10-18",
+    "weekday": "Sunday",
+    "title": "Homeward — Haneda → LAX",
+    "city": "Tokyo (Haneda)",
+    "summary": "Checkout Ginza, head to Haneda. Return flight ~9pm HND → LAX 3:10pm.",
+    "callouts": [],
+    "items": [
+      {
+        "id": "d18-checkout",
+        "type": "stay",
+        "title": "Checkout Koko Hotel Ginza",
+        "detail": "Checkout 11am. Luggage plan TBD.",
+        "status": "Booked",
+        "mapsQuery": "Koko Hotel Ginza 1-chome",
+        "mapsUrl": null
+      },
+      {
+        "id": "d18-flight",
+        "type": "flight",
+        "title": "ANA NH126 — Haneda → LAX",
+        "detail": "Departs Haneda Sun Oct 18 at 9:05pm (Terminal 2) → arrives LAX 3:10pm same calendar day. Economy confirmed. Boarding passes via ANA check-in closer to departure.",
+        "status": "Booked",
+        "mapsQuery": "Haneda Airport",
+        "mapsUrl": null
+      }
+    ]
+  }
+]
