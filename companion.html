@@ -560,6 +560,39 @@ main {
   }
 }
 
+
+.crew-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.crew-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 12px;
+  background: #fff7ed;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.crew-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
   </style>
 </head>
 <body>
@@ -602,8 +635,8 @@ window.TRIP_DATA = {
   "meta": {
     "title": "Circus Vargas Goes to Japan",
     "docUrl": "https://docs.google.com/document/d/1t0yKSCdpAXDrOtdceFMqJ7ZXoe6zh-OmAR-z8jigMEA/edit",
-    "lastSynced": "2026-09-23 11:47 PT",
-    "partySize": "6 adults, one 10-year-old, one toddler (~23 months) = 8 people",
+    "lastSynced": "2026-09-23 18:00 PT",
+    "partySize": "Chris, Adana, Amaya, Ellie, Robert, Sandra, Alyssa, Pete (8)",
     "timezone": "Asia/Tokyo",
     "tripStart": "2026-10-09",
     "tripEnd": "2026-10-18",
@@ -1682,7 +1715,17 @@ window.TRIP_DATA = {
     "nishikiMaps": "https://maps.app.goo.gl/pHPPsJyumXetHhQP9"
   },
   "party": {
-    "party": "6 adults, one 10-year-old (Marco), one toddler Ellie (~23 months on the trip) = 8 people.",
+    "party": "Chris, Adana, Amaya, Ellie, Robert, Sandra, Alyssa, and Pete — 8 people (6 adults, Amaya ~10, Ellie ~23 months on the trip).",
+    "members": [
+      "Chris",
+      "Adana",
+      "Amaya",
+      "Ellie",
+      "Robert",
+      "Sandra",
+      "Alyssa",
+      "Pete"
+    ],
     "notes": [
       "Shared itinerary lives in the Google Doc — edit there so everyone sees updates.",
       "This phone app stores done/visited, stars, and personal notes in localStorage only (per device).",
@@ -1703,7 +1746,7 @@ window.TRIP_DATA = {
         "what": "Viewland chairlift; Samurai Museum; Yasaka Pagoda & Yogen-in"
       },
       {
-        "who": "Marco",
+        "who": "Amaya",
         "what": "Akihabara games / gachapon"
       },
       {
@@ -2478,10 +2521,14 @@ window.TRIP_DATA = {
           `<li><strong>${escapeHtml(p.who)}:</strong> ${escapeHtml(p.what)}</li>`
       )
       .join('');
+    const members = (DATA.party.members || [])
+      .map((name, i) => `<li class="crew-member"><span class="crew-num">${i + 1}</span>${escapeHtml(name)}</li>`)
+      .join('');
     el.innerHTML = `
       <div class="card">
         <h2>🎪 The circus crew</h2>
-        <p>${escapeHtml(DATA.party.party)}</p>
+        <p class="muted">${escapeHtml(DATA.party.party)}</p>
+        ${members ? `<ol class="crew-list">${members}</ol>` : ''}
       </div>
       <div class="card">
         <h2>Crew notes</h2>
