@@ -2535,6 +2535,17 @@ window.TRIP_DATA = {
       </a>`;
   }
 
+  const HOME_TZ = 'America/Los_Angeles';
+  /** Date at home (Pacific) — used for the pre-trip countdown. */
+  function homeYmd(d = new Date()) {
+    return new Intl.DateTimeFormat('en-CA', {
+      timeZone: HOME_TZ,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(d);
+  }
+
   function tokyoYmd(d = new Date()) {
     return new Intl.DateTimeFormat('en-CA', {
       timeZone: TZ,
@@ -2648,11 +2659,11 @@ window.TRIP_DATA = {
     const day = findDay(today);
 
     if (today < start) {
-      const n = daysUntilTrip(today);
+      const n = daysUntilTrip(homeYmd());
       el.innerHTML = `
         ${eyebrow('今日', 'Today')}
         <div class="card countdown">
-          <p class="muted">Tokyo time · we leave Oct 9, 2026</p>
+          <p class="muted">Pacific time · we fly Oct 8, land in Tokyo Oct 9</p>
           <div class="big">${n}</div>
           <p class="countdown-label">${n === 1 ? 'day' : 'days'} until Japan!</p>
           <p><strong>🎪 Circus Vargas adventure countdown</strong></p>
