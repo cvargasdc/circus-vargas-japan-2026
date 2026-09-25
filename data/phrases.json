@@ -1,0 +1,401 @@
+{
+  "pronunciationTip": "Japanese vowels are pure and short: a (ah), i (ee), u (oo), e (eh), o (oh). Give each syllable even stress. Pitch accent matters more than English-style stress — listen and mimic.",
+  "categories": [
+    {
+      "id": "greetings",
+      "name": "Greetings & courtesy",
+      "items": [
+        {
+          "id": "p-ohayo",
+          "ja": "おはようございます",
+          "romaji": "ohayō gozaimasu",
+          "en": "Good morning"
+        },
+        {
+          "id": "p-konnichiwa",
+          "ja": "こんにちは",
+          "romaji": "konnichiwa",
+          "en": "Hello / Good afternoon"
+        },
+        {
+          "id": "p-konbanwa",
+          "ja": "こんばんは",
+          "romaji": "konbanwa",
+          "en": "Good evening"
+        },
+        {
+          "id": "p-sayonara",
+          "ja": "さようなら",
+          "romaji": "sayōnara",
+          "en": "Goodbye"
+        },
+        {
+          "id": "p-arigato",
+          "ja": "ありがとうございます",
+          "romaji": "arigatō gozaimasu",
+          "en": "Thank you (polite)"
+        },
+        {
+          "id": "p-sumimasen",
+          "ja": "すみません",
+          "romaji": "sumimasen",
+          "en": "Excuse me / Sorry"
+        },
+        {
+          "id": "p-hajimemashite",
+          "ja": "はじめまして",
+          "romaji": "hajimemashite",
+          "en": "Nice to meet you"
+        },
+        {
+          "id": "p-hai",
+          "ja": "はい",
+          "romaji": "hai",
+          "en": "Yes"
+        },
+        {
+          "id": "p-ie",
+          "ja": "いいえ",
+          "romaji": "iie (“ee-eh”)",
+          "en": "No"
+        },
+        {
+          "id": "p-daijobu",
+          "ja": "大丈夫です",
+          "romaji": "daijōbu desu",
+          "en": "I'm fine / It's okay"
+        },
+        {
+          "id": "p-onegai",
+          "ja": "お願いします",
+          "romaji": "onegai shimasu",
+          "en": "Please (request)"
+        },
+        {
+          "id": "p-dozo",
+          "ja": "どうぞ",
+          "romaji": "dōzo",
+          "en": "Please (go ahead / here you are)"
+        },
+        {
+          "id": "p-ogenki",
+          "ja": "お元気ですか",
+          "romaji": "ogenki desu ka",
+          "en": "How are you?"
+        }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "name": "Getting around",
+      "items": [
+        {
+          "id": "p-wa-doko",
+          "ja": "…はどこですか",
+          "romaji": "… wa doko desu ka",
+          "en": "Where is …?"
+        },
+        {
+          "id": "p-eki",
+          "ja": "駅はどこですか",
+          "romaji": "eki wa doko desu ka",
+          "en": "Where is the station?"
+        },
+        {
+          "id": "p-densha",
+          "ja": "この電車は…に行きますか",
+          "romaji": "kono densha wa … ni ikimasu ka",
+          "en": "Does this train go to …?"
+        },
+        {
+          "id": "p-kippu",
+          "ja": "切符をください",
+          "romaji": "kippu o kudasai",
+          "en": "A ticket, please"
+        },
+        {
+          "id": "p-ikura-train",
+          "ja": "いくらですか",
+          "romaji": "ikura desu ka",
+          "en": "How much is it?"
+        },
+        {
+          "id": "p-norikae",
+          "ja": "乗り換えはどこですか",
+          "romaji": "norikae wa doko desu ka",
+          "en": "Where do I transfer?"
+        },
+        {
+          "id": "p-basutei",
+          "ja": "バス停はどこですか",
+          "romaji": "basutei wa doko desu ka",
+          "en": "Where is the bus stop?"
+        },
+        {
+          "id": "p-chizu",
+          "ja": "地図を見せてください",
+          "romaji": "chizu o misete kudasai",
+          "en": "Please show me a map"
+        },
+        {
+          "id": "p-orimasu",
+          "ja": "ここで降ります",
+          "romaji": "koko de orimasu",
+          "en": "I'm getting off here"
+        },
+        {
+          "id": "p-toire",
+          "ja": "トイレはどこですか",
+          "romaji": "toire wa doko desu ka",
+          "en": "Where is the restroom?"
+        }
+      ]
+    },
+    {
+      "id": "eating",
+      "name": "Eating",
+      "items": [
+        {
+          "id": "p-menu",
+          "ja": "メニューをください",
+          "romaji": "menyū o kudasai",
+          "en": "Menu, please"
+        },
+        {
+          "id": "p-osusume",
+          "ja": "おすすめは何ですか",
+          "romaji": "osusume wa nan desu ka",
+          "en": "What do you recommend?"
+        },
+        {
+          "id": "p-arimasu",
+          "ja": "…はありますか",
+          "romaji": "… wa arimasu ka",
+          "en": "Do you have …?"
+        },
+        {
+          "id": "p-veg",
+          "ja": "ペスカタリアンです",
+          "romaji": "pesukatarian desu",
+          "en": "I'm a pescatarian"
+        },
+        {
+          "id": "p-omizu",
+          "ja": "お水をください",
+          "romaji": "omizu o kudasai",
+          "en": "Water, please"
+        },
+        {
+          "id": "p-kore-des",
+          "ja": "これをください",
+          "romaji": "kore o kudasai",
+          "en": "This one, please"
+        },
+        {
+          "id": "p-itadakimasu",
+          "ja": "いただきます",
+          "romaji": "itadakimasu",
+          "en": "Let's eat (before meal)"
+        },
+        {
+          "id": "p-gochisosama",
+          "ja": "ごちそうさまでした",
+          "romaji": "gochisōsama deshita",
+          "en": "Thank you for the meal"
+        },
+        {
+          "id": "p-betsubetsu",
+          "ja": "別々でお願いします",
+          "romaji": "betsubetsu de onegai shimasu",
+          "en": "Separate checks, please"
+        },
+        {
+          "id": "p-okaikei",
+          "ja": "お会計をお願いします",
+          "romaji": "okaikei o onegai shimasu",
+          "en": "Check, please"
+        },
+        {
+          "id": "p-oishii",
+          "ja": "おいしいです",
+          "romaji": "oishii desu",
+          "en": "It's delicious"
+        },
+        {
+          "id": "p-oishikatta",
+          "ja": "おいしかったです",
+          "romaji": "oishikatta desu",
+          "en": "It was delicious (past / more formal)"
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "Shopping",
+      "items": [
+        {
+          "id": "p-ikura-shop",
+          "ja": "いくらですか",
+          "romaji": "ikura desu ka",
+          "en": "How much is it?"
+        },
+        {
+          "id": "p-kore-kudasai",
+          "ja": "これをください",
+          "romaji": "kore o kudasai",
+          "en": "I'll take this"
+        },
+        {
+          "id": "p-card",
+          "ja": "クレジットカードは使えますか",
+          "romaji": "kurejitto kādo wa tsukaemasu ka",
+          "en": "Can I use a credit card?"
+        },
+        {
+          "id": "p-genkin",
+          "ja": "現金",
+          "romaji": "genkin",
+          "en": "Cash"
+        },
+        {
+          "id": "p-misete",
+          "ja": "見せてください",
+          "romaji": "misete kudasai",
+          "en": "Please show me"
+        },
+        {
+          "id": "p-ikko",
+          "ja": "一個ください",
+          "romaji": "ikko kudasai",
+          "en": "One, please"
+        },
+        {
+          "id": "p-menzei",
+          "ja": "免税できますか",
+          "romaji": "menzei dekimasu ka",
+          "en": "Can I get tax-free?"
+        },
+        {
+          "id": "p-fukuro",
+          "ja": "袋は要りますか",
+          "romaji": "fukuro wa irimasu ka",
+          "en": "Do you need a bag?"
+        },
+        {
+          "id": "p-atatame",
+          "ja": "温めますか",
+          "romaji": "atatamemasu ka",
+          "en": "Shall I warm it up?"
+        }
+      ]
+    },
+    {
+      "id": "hotels",
+      "name": "Hotels & airports",
+      "items": [
+        {
+          "id": "p-yoyaku",
+          "ja": "予約しています",
+          "romaji": "yoyaku shiteimasu",
+          "en": "I have a reservation"
+        },
+        {
+          "id": "p-checkin",
+          "ja": "チェックインをお願いします",
+          "romaji": "chekkuin o onegai shimasu",
+          "en": "Check-in, please"
+        },
+        {
+          "id": "p-passport",
+          "ja": "パスポートでいいですか",
+          "romaji": "pasupōto de ii desu ka",
+          "en": "Is a passport OK?"
+        },
+        {
+          "id": "p-choshoku",
+          "ja": "朝食は何時ですか",
+          "romaji": "chōshoku wa nanji desu ka",
+          "en": "What time is breakfast?"
+        },
+        {
+          "id": "p-wifi",
+          "ja": "Wi-Fiはありますか",
+          "romaji": "waifai wa arimasu ka",
+          "en": "Is there Wi-Fi?"
+        },
+        {
+          "id": "p-nimotsu",
+          "ja": "荷物を預けてもいいですか",
+          "romaji": "nimotsu o azukete mo ii desu ka",
+          "en": "May I leave my luggage?"
+        },
+        {
+          "id": "p-eigo",
+          "ja": "英語は分かりますか？",
+          "romaji": "Eigo wa wakarimasu ka?",
+          "en": "Do you understand English?"
+        },
+        {
+          "id": "p-yoku-wakarimasen",
+          "ja": "よく分かりません",
+          "romaji": "Yoku wakarimasen",
+          "en": "I don't understand well"
+        }
+      ]
+    },
+    {
+      "id": "emergencies",
+      "name": "Emergencies",
+      "items": [
+        {
+          "id": "p-tasukete",
+          "ja": "助けてください",
+          "romaji": "tasukete kudasai",
+          "en": "Please help me"
+        },
+        {
+          "id": "p-byoin",
+          "ja": "病院はどこですか",
+          "romaji": "byōin wa doko desu ka",
+          "en": "Where is the hospital?"
+        },
+        {
+          "id": "p-yakkyoku",
+          "ja": "薬局はどこですか",
+          "romaji": "yakkyoku wa doko desu ka",
+          "en": "Where is the pharmacy?"
+        },
+        {
+          "id": "p-keisatsu",
+          "ja": "警察を呼んでください",
+          "romaji": "keisatsu o yonde kudasai",
+          "en": "Please call the police"
+        },
+        {
+          "id": "p-mayoimashita",
+          "ja": "道に迷いました",
+          "romaji": "michi ni mayoimashita",
+          "en": "I'm lost"
+        },
+        {
+          "id": "p-nakushimashita",
+          "ja": "…をなくしました",
+          "romaji": "… o nakushimashita",
+          "en": "I lost …"
+        },
+        {
+          "id": "p-119",
+          "ja": "119番",
+          "romaji": "hyaku-jū-kyū ban (119)",
+          "en": "Ambulance / fire"
+        },
+        {
+          "id": "p-110",
+          "ja": "110番",
+          "romaji": "hyaku-tō ban (110)",
+          "en": "Police"
+        }
+      ]
+    }
+  ]
+}
