@@ -3,7 +3,7 @@ window.TRIP_DATA = {
   "meta": {
     "title": "Circus Vargas Goes to Japan",
     "docUrl": "https://docs.google.com/document/d/1t0yKSCdpAXDrOtdceFMqJ7ZXoe6zh-OmAR-z8jigMEA/edit",
-    "lastSynced": "2026-09-24 09:50 PT",
+    "lastSynced": "2026-09-25 09:48 PT",
     "partySize": "Chris, Adana, Amaya, Ellie, Robert, Sandra, Alyssa, Pete (8)",
     "timezone": "Asia/Tokyo",
     "tripStart": "2026-10-09",
@@ -193,20 +193,111 @@ window.TRIP_DATA = {
       "id": "day-2026-10-11",
       "date": "2026-10-11",
       "weekday": "Sunday",
-      "title": "Flexible Kyoto day",
+      "title": "Northwest Kyoto",
       "city": "Kyoto",
-      "summary": "Open / TBD in the Google Doc — fill in as the party decides.",
+      "summary": "Nijo Castle, Golden Pavilion, Adashino/Otagi/Gioji temples, Arashiyama coffee & monkeys, optional Saihōji moss temple.",
       "callouts": [
-        "Flexible day — add plans in the shared Google Doc."
+        "Doc filled in Northwest Kyoto — long day; pick a realistic subset with kids.",
+        "Saihōji (Kokedera) usually needs advance reservation."
       ],
       "items": [
         {
-          "id": "d11-tbd",
-          "type": "note",
-          "title": "Kyoto — open agenda",
-          "detail": "Temple day, shopping, or rest. Coordinate in the Doc.",
+          "id": "d11-nijo",
+          "type": "place",
+          "title": "Nijo Castle",
+          "detail": "Shogun palace with nightingale floors.",
           "status": null,
-          "mapsQuery": "Kyoto",
+          "mapsQuery": "Nijo Castle Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-kura",
+          "type": "place",
+          "title": "Kura Daily Store",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kura Daily Store Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-kinkakuji",
+          "type": "place",
+          "title": "Kinkakuji (Golden Pavilion)",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Kinkakuji Golden Pavilion Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-adashino",
+          "type": "place",
+          "title": "Adashino Nenbutsu-ji & Chikurin bamboo",
+          "detail": "Similar vibe to Arashiyama bamboo, usually less crowded.",
+          "status": null,
+          "mapsQuery": "Adashino Nenbutsu-ji Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-sagano",
+          "type": "place",
+          "title": "Sagano Kobo paper shop",
+          "detail": "Paper and souvenirs; Doc notes the shopkeeper.",
+          "status": null,
+          "mapsQuery": "Sagano Kobo Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-otagi",
+          "type": "place",
+          "title": "Otagi Nenbutsu-ji",
+          "detail": "8th-century temple with 1,200+ stone rakan heads.",
+          "status": null,
+          "mapsQuery": "Otagi Nenbutsu-ji Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-gioji",
+          "type": "place",
+          "title": "Giōji Temple",
+          "detail": "Moss and bamboo groves.",
+          "status": null,
+          "mapsQuery": "Gioji Temple Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-takao",
+          "type": "food",
+          "title": "√2 Riverside Takao Kyoto",
+          "detail": "Riverside restaurant — a bit out of the way.",
+          "status": null,
+          "mapsQuery": "Riverside Takao Kyoto",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-arabica",
+          "type": "food",
+          "title": "% ARABICA Kyoto Arashiyama",
+          "detail": "Riverfront coffee.",
+          "status": null,
+          "mapsQuery": "% ARABICA Kyoto Arashiyama",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-monkeys",
+          "type": "place",
+          "title": "Arashiyama Monkey Park Iwatayama",
+          "detail": null,
+          "status": null,
+          "mapsQuery": "Arashiyama Monkey Park Iwatayama",
+          "mapsUrl": null
+        },
+        {
+          "id": "d11-saihoji",
+          "type": "place",
+          "title": "Saihōji (Kokedera) moss temple",
+          "detail": "UNESCO site — usually needs advance booking.",
+          "status": "Plan — reserve ahead",
+          "mapsQuery": "Saihoji Kokedera Kyoto",
           "mapsUrl": null
         }
       ]
@@ -453,7 +544,7 @@ window.TRIP_DATA = {
       "weekday": "Friday",
       "title": "Mom's birthday! Akasaka / Shinjuku / Shibuya",
       "city": "Tokyo",
-      "summary": "Birthday day — Imperial Palace, Harry Potter shop, Samurai Museum, cameras, tacos, Donki, ramen, Shibuya night view.",
+      "summary": "Birthday day — Imperial Palace, Harry Potter shop, Samurai Museum, Omoide Yokocho, Takeshita, cameras, tacos, Donki, ramen, Shibuya night view.",
       "callouts": [
         "Happy birthday, Mom!"
       ],
@@ -495,12 +586,30 @@ window.TRIP_DATA = {
           "mapsUrl": null
         },
         {
+          "id": "d16-omoide",
+          "type": "place",
+          "title": "Omoide Yokocho (Memory Lane)",
+          "detail": "Landmark alley of food stalls for simple fare.",
+          "status": null,
+          "mapsQuery": "Omoide Yokocho Shinjuku",
+          "mapsUrl": null
+        },
+        {
           "id": "d16-camera",
           "type": "place",
           "title": "Used Camera Box / Tokyo Used Camera",
           "detail": null,
           "status": null,
           "mapsQuery": "Tokyo Used Camera",
+          "mapsUrl": null
+        },
+        {
+          "id": "d16-takeshita",
+          "type": "place",
+          "title": "Takeshita Street",
+          "detail": "Harajuku.",
+          "status": null,
+          "mapsQuery": "Takeshita Street Harajuku",
           "mapsUrl": null
         },
         {
@@ -759,19 +868,19 @@ window.TRIP_DATA = {
           {
             "id": "p-hai",
             "ja": "はい",
-            "romaji": "Hai",
+            "romaji": "hai",
             "en": "Yes"
           },
           {
             "id": "p-ie",
             "ja": "いいえ",
-            "romaji": "Ie (“ee-eh”)",
+            "romaji": "iie (“ee-eh”)",
             "en": "No"
           },
           {
             "id": "p-daijobu",
             "ja": "大丈夫です",
-            "romaji": "daijobu des",
+            "romaji": "daijōbu desu",
             "en": "I'm fine / It's okay"
           },
           {
@@ -867,7 +976,7 @@ window.TRIP_DATA = {
           {
             "id": "p-menu",
             "ja": "メニューをください",
-            "romaji": "menyū o kudasa",
+            "romaji": "menyū o kudasai",
             "en": "Menu, please"
           },
           {
@@ -896,8 +1005,8 @@ window.TRIP_DATA = {
           },
           {
             "id": "p-kore-des",
-            "ja": "これですください",
-            "romaji": "Kore des kudasai",
+            "ja": "これをください",
+            "romaji": "kore o kudasai",
             "en": "This one, please"
           },
           {
@@ -929,6 +1038,12 @@ window.TRIP_DATA = {
             "ja": "おいしいです",
             "romaji": "oishii desu",
             "en": "It's delicious"
+          },
+          {
+            "id": "p-oishikatta",
+            "ja": "おいしかったです",
+            "romaji": "oishikatta desu",
+            "en": "It was delicious (past / more formal)"
           }
         ]
       },
@@ -957,19 +1072,19 @@ window.TRIP_DATA = {
           {
             "id": "p-genkin",
             "ja": "現金",
-            "romaji": "Genkin",
+            "romaji": "genkin",
             "en": "Cash"
           },
           {
             "id": "p-misete",
             "ja": "見せてください",
-            "romaji": "o misete kudasai",
+            "romaji": "misete kudasai",
             "en": "Please show me"
           },
           {
             "id": "p-ikko",
             "ja": "一個ください",
-            "romaji": "o ikko kudasai",
+            "romaji": "ikko kudasai",
             "en": "One, please"
           },
           {
@@ -987,7 +1102,7 @@ window.TRIP_DATA = {
           {
             "id": "p-atatame",
             "ja": "温めますか",
-            "romaji": "Atatamemasu ka?",
+            "romaji": "atatamemasu ka",
             "en": "Shall I warm it up?"
           }
         ]
@@ -1011,7 +1126,7 @@ window.TRIP_DATA = {
           {
             "id": "p-passport",
             "ja": "パスポートでいいですか",
-            "romaji": "pasupōto de iidesu ka?",
+            "romaji": "pasupōto de ii desu ka",
             "en": "Is a passport OK?"
           },
           {
@@ -1088,14 +1203,14 @@ window.TRIP_DATA = {
           },
           {
             "id": "p-119",
-            "ja": "119",
-            "romaji": "119",
+            "ja": "119番",
+            "romaji": "hyaku-jū-kyū ban (119)",
             "en": "Ambulance / fire"
           },
           {
             "id": "p-110",
-            "ja": "110",
-            "romaji": "110",
+            "ja": "110番",
+            "romaji": "hyaku-tō ban (110)",
             "en": "Police"
           }
         ]
