@@ -928,6 +928,36 @@ main {
   flex-shrink: 0;
   transform: rotate(-6deg);
 }
+.crew-names {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 10px;
+  row-gap: 0;
+  min-width: 0;
+}
+.crew-nick {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--sumi);
+  letter-spacing: 0.01em;
+}
+.crew-real {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--sumi-soft);
+  letter-spacing: 0.06em;
+}
+.crew-member.has-nick { border-left-color: var(--shu); }
+.crew-hint {
+  margin: 10px 0 0;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ai);
+}
 .card ul { padding-left: 1.2em; }
 .card li { margin: 4px 0; }
 .card li::marker { color: var(--shu); }
@@ -1421,11 +1451,11 @@ window.TRIP_DATA = {
       "id": "day-2026-10-15",
       "date": "2026-10-15",
       "weekday": "Thursday",
-      "title": "Robert & Sandra's anniversary · Akihabara · Asakusa · Skytree",
+      "title": "Grandpa & Abbi's anniversary · Akihabara · Asakusa · Skytree",
       "city": "Tokyo",
       "summary": "Akihabara / Taito / Asakusa / Skytree loop — games, food, knives, views.",
       "callouts": [
-        "💍 Happy anniversary, Robert & Sandra!"
+        "💍 Happy anniversary, Grandpa & Abbi!"
       ],
       "items": [
         {
@@ -1516,11 +1546,11 @@ window.TRIP_DATA = {
       "id": "day-2026-10-16",
       "date": "2026-10-16",
       "weekday": "Friday",
-      "title": "Sandra's birthday! 🎂 Akasaka / Shinjuku / Shibuya",
+      "title": "Abbi's birthday! 🎂 Akasaka / Shinjuku / Shibuya",
       "city": "Tokyo",
-      "summary": "Sandra's (Mom/Grandma) birthday — Imperial Palace, Harry Potter shop, Samurai Museum, Omoide Yokocho, Takeshita, cameras, tacos, Donki, ramen, Shibuya night view.",
+      "summary": "Abbi's (Sandra's) birthday — Imperial Palace, Harry Potter shop, Samurai Museum, Omoide Yokocho, Takeshita, cameras, tacos, Donki, ramen, Shibuya night view.",
       "callouts": [
-        "🎂 Happy birthday, Sandra! (Mom / Grandma)"
+        "🎂 Happy birthday, Abbi!"
       ],
       "items": [
         {
@@ -2220,8 +2250,8 @@ window.TRIP_DATA = {
       "Prefer jumbo van Haneda→Shinagawa morning of Oct 10 (not Keikyu with 8 + bags).",
       "Shinkansen: outbound Nozomi 41 is fully booked (8 Green Car seats); return Nozomi 20 has 6 of 8 Green Car seats booked — 2 adults still need tickets.",
       "A&P side quests: Nachi Falls (Oct 13), Samurai Museum (Oct 16), Yasaka Pagoda & Yogen-in (Oct 10).",
-      "🎂 Sandra's (Mom/Grandma) birthday Oct 16 — celebrate in Shinjuku/Shibuya!",
-      "💍 Robert & Sandra's anniversary Oct 15",
+      "🎂 Abbi's (Sandra's) birthday Oct 16 — celebrate in Shinjuku/Shibuya!",
+      "💍 Grandpa & Abbi's (Robert & Sandra's) anniversary Oct 15",
       "No passport numbers or payment cards in this public site."
     ],
     "priorities": [
@@ -2242,10 +2272,19 @@ window.TRIP_DATA = {
         "what": "Prefer funicular over chairlift at Viewland when possible"
       },
       {
-        "who": "Sandra (Mom/Grandma)",
+        "who": "Abbi (Sandra)",
         "what": "Birthday day Oct 16 — Shinjuku/Shibuya celebration"
       }
-    ]
+    ],
+    "nicknames": {
+      "Chris": "Pah Pah",
+      "Adana": "Mama",
+      "Sandra": "Abbi",
+      "Robert": "Grandpa",
+      "Alyssa": "Tia",
+      "Pete": "Uncle Pete",
+      "Peter": "Uncle Pete"
+    }
   },
   "photos": {
     "Haneda Airport Terminal 3": {
@@ -3169,20 +3208,40 @@ window.TRIP_DATA = {
     const notes = (DATA.party.notes || [])
       .map((n) => `<li>${linkify(n)}</li>`)
       .join('');
+    // Kids' names for the adults (data/overrides.json → party.nicknames)
+    const nicks = DATA.party.nicknames || {};
+    const nickFor = (name) => {
+      const n = nicks[String(name || '').trim()];
+      return n && n !== name ? n : '';
+    };
+    // "Alyssa" → "Tia (Alyssa)"; "Pete" → "Uncle Pete" (nickname already says it)
+    const whoLabel = (who) => {
+      const n = nickFor(who);
+      if (!n) return who;
+      return n.toLowerCase().includes(String(who).toLowerCase()) ? n : `${n} (${who})`;
+    };
     const pri = (DATA.party.priorities || [])
       .map(
         (p) =>
-          `<li><strong>${escapeHtml(p.who)}:</strong> ${escapeHtml(p.what)}</li>`
+          `<li><strong>${escapeHtml(whoLabel(p.who))}:</strong> ${escapeHtml(p.what)}</li>`
       )
       .join('');
     const members = (DATA.party.members || [])
-      .map((name, i) => `<li class="crew-member"><span class="crew-num">${i + 1}</span>${escapeHtml(name)}</li>`)
+      .map((name, i) => {
+        const nick = nickFor(name);
+        const names = nick
+          ? `<span class="crew-nick">${escapeHtml(nick)}</span><span class="crew-real">${escapeHtml(name)}</span>`
+          : `<span class="crew-nick">${escapeHtml(name)}</span>`;
+        return `<li class="crew-member${nick ? ' has-nick' : ''}"><span class="crew-num">${i + 1}</span><span class="crew-names">${names}</span></li>`;
+      })
       .join('');
+    const hasNicks = (DATA.party.members || []).some((m) => nickFor(m));
     el.innerHTML = `
       ${eyebrow('仲間', 'Crew')}
       <div class="card">
         <h2>🎪 The circus crew</h2>
         <p class="muted">${escapeHtml(DATA.party.party)}</p>
+        ${hasNicks ? `<p class="crew-hint">Big names = what Amaya &amp; Ellie call everyone!</p>` : ''}
         ${members ? `<ol class="crew-list">${members}</ol>` : ''}
       </div>
       <div class="card">
