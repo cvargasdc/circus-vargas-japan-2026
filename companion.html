@@ -962,6 +962,16 @@ main {
 .card li { margin: 4px 0; }
 .card li::marker { color: var(--shu); }
 
+/* Wish list extras (suggested day + Maps button) */
+.wish-rich { margin-bottom: 0.6rem; }
+.wish-when {
+  margin-top: 0.3rem;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--ai);
+}
+.wish-actions { margin-top: 0.35rem; }
+
   </style>
 </head>
 <body>
@@ -1561,6 +1571,16 @@ window.TRIP_DATA = {
           "status": null,
           "mapsQuery": "Imperial Palace Tokyo",
           "mapsUrl": null
+        },
+        {
+          "id": "d16-commen-kids",
+          "type": "food",
+          "title": "Comme'N KIDS — kids-only bakery (Amaya's wish)",
+          "detail": "🥐 Amaya's wish! A tiny bakery at Azabudai Hills where only kids (elementary-school age and younger) go in: crawl through the little tunnel, pick your bread and pay all by yourself while the grown-ups wait outside. Open daily 10am–5pm but often sells out by early afternoon, so go right at 10am. If there's a wait, write your name on the sheet at the door and come back at your time. Bring yen cash (cash only). No photos inside. Grown-ups: the big Comme'N TOKYO bakery is right next door. Getting there: Hibiya Line to Kamiyacho (~7 min from Ginza or Hibiya), Exit 5 connects straight into Azabudai Hills. Then on to Akasaka for the Harry Potter shop (opens 11am). Tip: the Imperial Palace East Gardens are closed on Fridays, so do a quick outside-the-walls palace stop first. Ellie may be allowed in too if she can walk in on her own; staff decide.",
+          "status": "Optional",
+          "mapsQuery": "Comme'N KIDS Azabudai Hills",
+          "mapsUrl": "https://maps.app.goo.gl/8uDBLx5Vh2fQPu1C8",
+          "link": "https://commen.jp/shop_list/"
         },
         {
           "id": "d16-harry-potter",
@@ -2278,6 +2298,13 @@ window.TRIP_DATA = {
         "what": "Akihabara games / gachapon"
       },
       {
+        "who": "Amaya",
+        "what": "Comme'N KIDS — the kids-only bakery at Azabudai Hills: crawl through the tiny tunnel and buy your own bread, no grown-ups allowed!",
+        "when": "Best day: Fri Oct 16, right at 10am opening (on the way to Akasaka). Backup: Sun Oct 18 at 10am, before checkout.",
+        "url": "https://maps.app.goo.gl/8uDBLx5Vh2fQPu1C8",
+        "day": "2026-10-16"
+      },
+      {
         "who": "Ellie",
         "what": "Prefer funicular over chairlift at Viewland when possible"
       },
@@ -2632,6 +2659,13 @@ window.TRIP_DATA = {
       "credit": "Wikipedia / Wikimedia Commons — Haneda Airport",
       "pageTitle": "Haneda Airport",
       "pageUrl": "https://en.wikipedia.org/wiki/Haneda_Airport"
+    },
+    "Comme'N KIDS Azabudai Hills": {
+      "file": "images/commen-kids-azabudai-hills.jpg",
+      "source": "wikimedia",
+      "credit": "Wikipedia / Wikimedia Commons — Azabudai Hills",
+      "pageTitle": "Azabudai Hills",
+      "pageUrl": "https://en.wikipedia.org/wiki/Azabudai_Hills"
     }
   }
 };
@@ -3230,11 +3264,16 @@ window.TRIP_DATA = {
       if (!n) return who;
       return n.toLowerCase().includes(String(who).toLowerCase()) ? n : `${n} (${who})`;
     };
+    // Optional extras per wish (data/overrides.json → party.priorities.add):
+    // "when" (suggested day) and "url" (Google Maps link)
     const pri = (DATA.party.priorities || [])
-      .map(
-        (p) =>
-          `<li><strong>${escapeHtml(whoLabel(p.who))}:</strong> ${escapeHtml(p.what)}</li>`
-      )
+      .map((p) => {
+        const when = p.when ? `<div class="wish-when">📅 ${escapeHtml(p.when)}</div>` : '';
+        const url = /^https?:\/\//.test(String(p.url || ''))
+          ? `<div class="item-actions wish-actions"><a class="btn btn-sm btn-indigo" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">Maps</a></div>`
+          : '';
+        return `<li class="${when || url ? 'wish-rich' : ''}"><strong>${escapeHtml(whoLabel(p.who))}:</strong> ${escapeHtml(p.what)}${when}${url}</li>`;
+      })
       .join('');
     const members = (DATA.party.members || [])
       .map((name, i) => {
