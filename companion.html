@@ -229,8 +229,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.02em
   right: 0;
   z-index: 50;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
   background: var(--paper-card);
   border-top: 1px solid var(--line-ink);
   padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
@@ -244,7 +244,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.02em
   min-height: 64px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.68rem;
+  padding: 0 1px;
   font-weight: 700;
   color: var(--sumi-soft);
   display: flex;
@@ -254,10 +255,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.02em
   gap: 1px;
   line-height: 1.15;
 }
-.nav-tabs button .ico { font-size: 1.45rem; line-height: 1; margin-bottom: 2px; }
+.nav-tabs button .ico { font-size: 1.22rem; line-height: 1; margin-bottom: 1px; }
 .nav-tabs button .jp {
   font-family: var(--serif);
-  font-size: 0.66rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--sumi-soft);
@@ -994,6 +995,7 @@ main {
     <section id="panel-phrases" class="panel" aria-label="Say it"></section>
     <section id="panel-stays" class="panel" aria-label="Hotels and trains"></section>
     <section id="panel-party" class="panel" aria-label="Crew"></section>
+    <section id="panel-jetlag" class="panel" aria-label="Jet Lag: Coming Home"></section>
   </main>
 
   <footer class="app-footer">
@@ -1007,6 +1009,7 @@ main {
     <button type="button" data-panel="phrases" aria-selected="false"><span class="ico" aria-hidden="true">💬</span>Say it!<span class="jp" lang="ja" aria-hidden="true">言葉</span></button>
     <button type="button" data-panel="stays" aria-selected="false"><span class="ico" aria-hidden="true">🏨</span>Hotels<span class="jp" lang="ja" aria-hidden="true">宿</span></button>
     <button type="button" data-panel="party" aria-selected="false"><span class="ico" aria-hidden="true">🎪</span>Crew<span class="jp" lang="ja" aria-hidden="true">仲間</span></button>
+    <button type="button" data-panel="jetlag" aria-selected="false"><span class="ico" aria-hidden="true">🛬</span>Jet lag<span class="jp" lang="ja" aria-hidden="true">時差</span></button>
   </nav>
 
   <script>
@@ -3424,12 +3427,63 @@ window.TRIP_DATA = {
       </div>`;
   }
 
+
+  function renderJetLag() {
+    const el = document.getElementById('panel-jetlag');
+    el.innerHTML = `
+      ${eyebrow('時差', 'Coming home')}
+      <div class="card">
+        <h2>Jet Lag: Coming Home</h2>
+        <p>Return leg only. Kids stay on Tokyo time — this shift is for Chris.</p>
+      </div>
+      <article class="card">
+        <h3>Last days in Tokyo</h3>
+        <p class="muted">Oct 15–17</p>
+        <ul>
+          <li>Protect Chris's sleep. No naps after <strong>3pm Tokyo</strong>.</li>
+          <li>Saturday, stay up until about <strong>11pm Tokyo</strong> (<strong>7am LA</strong>).</li>
+          <li>Don't shift the kids.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Flight NH126</h3>
+        <p class="muted">Sun Oct 18</p>
+        <p class="kv"><span>Departs:</span> Haneda <strong>9:05pm Tokyo</strong> (<strong>5:05am LA</strong>)</p>
+        <p class="kv"><span>Lands:</span> about <strong>3:10pm LA</strong></p>
+        <ul>
+          <li>Sleep <strong>9pm–1am Tokyo</strong> (<strong>5–9am LA</strong>) with an eye mask.</li>
+          <li>Wake about <strong>1am Tokyo</strong> (<strong>9am LA</strong>): light, water, food, and caffeine.</li>
+          <li>Stay awake the rest of the flight.</li>
+          <li>No car nap on landing.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Sunday after landing</h3>
+        <ul>
+          <li>Outdoor light <strong>4–6pm LA</strong>.</li>
+          <li>Early dinner, then bed with the kids about <strong>9–9:30pm LA</strong>.</li>
+          <li>Only a <strong>20-minute nap</strong>, and only before <strong>5pm LA</strong>.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Monday Oct 19 · workday</h3>
+        <ul>
+          <li>Up by <strong>7am LA</strong>. Outdoor light before work.</li>
+          <li>Coffee only before noon.</li>
+          <li>Short walk in the <strong>2–4pm</strong> danger zone.</li>
+          <li>Bed by <strong>10pm</strong>.</li>
+        </ul>
+        <div class="callout">Functional Monday. The fog clears Tuesday.</div>
+      </article>`;
+  }
+
   const panels = {
     today: renderToday,
     itinerary: renderItinerary,
     phrases: renderPhrases,
     stays: renderStays,
-    party: renderParty
+    party: renderParty,
+    jetlag: renderJetLag
   };
 
   function showPanel(name) {
